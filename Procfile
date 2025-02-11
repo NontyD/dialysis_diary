@@ -1,0 +1,1 @@
+web: gunicorn dialysis_connect.wsgi
