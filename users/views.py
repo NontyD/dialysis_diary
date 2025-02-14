@@ -3,6 +3,9 @@ from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.decorators import api_view
 from .serializers import UserSerializer
+from django.contrib.auth import authenticate, login
+from django.contrib import messages
+
 
 @api_view(['POST'])
 def register_user(request):
@@ -15,3 +18,24 @@ def register_user(request):
 
 def signup_page(request):
     return render(request, "signup.html")
+
+
+def login_page(request):
+    if request.method == "POST":
+        email = request.POST.get("email")
+        password = request.POST.get("password")
+
+        # Validation: Check if fields are blank
+        if not email or not password:
+            messages.error(request, "All fields are required.")
+            return render(request, "login.html")
+
+        # Authenticate user
+        user = authenticate(request, username=email, password=password)
+        if user is not None:
+            login(request, user)
+            return redirect("landing_page")  # Redirect to landing page
+        else:
+            messages.error(request, "Invalid email or password.")
+
+    return render(request, "login.html")
