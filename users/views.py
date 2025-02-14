@@ -74,3 +74,14 @@ def account_settings(request):
         messages.success(request, "Account details updated successfully.")
 
     return render(request, "account_settings.html")
+
+@login_required
+def delete_account(request):
+    if request.method == "POST":
+        user = request.user
+        user.delete()
+        messages.success(request, "Your account has been deleted.")
+        return redirect("login_page")  # Redirect to login after deletion
+
+    return render(request, "confirm_delete.html")
+
