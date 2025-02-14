@@ -42,3 +42,35 @@ def login_page(request):
             messages.error(request, "Invalid email or password.")
 
     return render(request, "login.html")
+
+@login_required
+def account_settings(request):
+    if request.method == "POST":
+        user = request.user
+        name = request.POST.get("name")
+        email = request.POST.get("email")
+        old_password = request.POST.get("old_password")
+        new_password = request.POST.get("new_password")
+        confirm_password = request.POST.get("confirm_password")
+
+        # Update name and email
+        if name:
+            user.first_name = name
+        if email:
+            user.email = email
+
+        # Update password only if old password is provided
+        if old_password and new_password and confirm_password:
+            if not user.check_password(old_password):
+                messages.error(request, "Old password is incorrect.")
+            elif new_password != confirm_password:
+                messages.error(request, "New passwords do not match.")
+            else:
+                user.set_password(new_password)
+                update_session_auth_hash(request, user)  # Keep user logged in
+                messages.success(request, "Password updated successfully.")
+
+        user.save()
+        messages.success(request, "Account details updated successfully.")
+
+    return render(request, "account_settings.html")
