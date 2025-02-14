@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Settings</title>
+</head>
+<body>
+    <h2>Account Settings</h2>
+
+    {% if messages %}
+        {% for message in messages %}
+            <p style="color: red;">{{ message }}</p>
+        {% endfor %}
+    {% endif %}
+
+    <form method="post">
+        {% csrf_token %}
+        <label for="name">Name:</label>
+        <input type="text" name="name" value="{{ request.user.first_name }}">
+        <br>
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" value="{{ request.user.email }}">
+        <br>
+
+        <h3>Change Password</h3>
+        <label for="old_password">Old Password:</label>
+        <input type="password" name="old_password">
+        <br>
+
+        <label for="new_password">New Password:</label>
+        <input type="password" name="new_password">
+        <br>
+
+        <label for="confirm_password">Confirm New Password:</label>
+        <input type="password" name="confirm_password">
+        <br>
+
+        <button type="submit">Update Account</button>
+    </form>
+
+    <hr>
+
+    <form action="{% url 'delete_account' %}" method="get">
+        <button type="submit" style="color: red;">Delete My Account</button>
+    </form>
+</body>
+</html>
