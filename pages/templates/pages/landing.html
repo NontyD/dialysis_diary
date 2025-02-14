@@ -1,23 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Dialysis Connect{% endblock %}</title>
-</head>
-<body>
-    <nav>
-        <a href="{% url 'landing_page' %}">Home</a>
-        <a href="{% url 'community' %}">Community</a>
-        <a href="{% url 'records' %}">Records</a>
-    </nav>
+{% extends "pages/base.html" %}
 
-    <div>
-        {% block content %}{% endblock %}
-    </div>
+{% block title %}Welcome to Dialysis Connect{% endblock %}
 
-    <footer>
-        <p>&copy; 2025 Dialysis Connect</p>
-    </footer>
-</body>
-</html>
+{% block content %}
+    <h1>Welcome to Dialysis Connect!</h1>
+    <p>Join our community to share experiences, find support, and stay informed about kidney health.</p>
+    <p>Most importantly, have your dialysis records at hand anytime you meet your health worker.</p>
+
+    <h2>Learn More</h2>
+    <ul>
+        <li><a href="https://ika.ie/kidneyhealth/" target="_blank">Kidney Health - Read More</a></li>
+        <li><a href="https://ika.ie/patient-guides/" target="_blank">Patient Guides - Read More</a></li>
+        <li><a href="https://ika.ie/medical-information/" target="_blank">Medical Information - Read More</a></li>
+        <li><a href="https://ika.ie/practical-information/" target="_blank">Practical Information - Read More</a></li>
+    </ul>
+{% endblock %}
