@@ -21,5 +21,5 @@ from hello_world import views as index_views
 urlpatterns = [
     path('', index_views.index, name='index'),
     path('admin/', admin.site.urls),
-    path('api/users/', include('users.urls')),  
+    path('users/', include('users.urls')), 
 ]

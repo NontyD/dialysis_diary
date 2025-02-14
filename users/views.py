@@ -13,4 +13,5 @@ def register_user(request):
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-
+def signup_page(request):
+    return render(request, "signup.html")
