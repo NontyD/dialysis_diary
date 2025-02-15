@@ -20,7 +20,7 @@ def register_user(request):
 
 
 def signup_page(request):
-    return render(request, "signup.html")
+    return render(request, "users/signup.html")
 
 
 def login_page(request):
@@ -31,7 +31,7 @@ def login_page(request):
         # Validation: Check if fields are blank
         if not email or not password:
             messages.error(request, "All fields are required.")
-            return render(request, "login.html")
+            return render(request, "user/login.html")
 
         # Authenticate user
         user = authenticate(request, username=email, password=password)
@@ -41,7 +41,7 @@ def login_page(request):
         else:
             messages.error(request, "Invalid email or password.")
 
-    return render(request, "login.html")
+    return render(request, "users/login.html")
 
 @login_required
 def account_settings(request):
@@ -73,7 +73,7 @@ def account_settings(request):
         user.save()
         messages.success(request, "Account details updated successfully.")
 
-    return render(request, "account_settings.html")
+    return render(request, "users/account_settings.html")
 
 
 @login_required
@@ -84,5 +84,5 @@ def delete_account(request):
         messages.success(request, "Your account has been deleted.")
         return redirect("login_page")  # Redirect to login after deletion
 
-    return render(request, "delete_account.html")
+    return render(request, "users/delete_account.html")
 
