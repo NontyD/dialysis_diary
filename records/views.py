@@ -11,22 +11,25 @@ def add_record(request):
     if request.method == "POST":
         form = DialysisRecordForm(request.POST)
         if form.is_valid():
-            record = form.save(commit=False)  # Don't save to the DB yet
-            record.user = request.user  # Assign the logged-in user
-            record.date = datetime.today().date()  # Auto-set today's date
-            record.save()  # Now save it to the DB
+            record = form.save(commit=False)
+            record.user = request.user
+            record.date = datetime.today().date()
+            record.save()
             messages.success(request, "Record added successfully!")
-            return redirect("records_list")  # Redirect to the records list
+            return redirect("records_list")  
     else:
-        form = DialysisRecordForm()  # Display an empty form
+        form = DialysisRecordForm()
     
-    return render(request, "records/add_record.html", {"form": form})  # Pass form to template
+    return render(request, "records/add_record.html", {"form": form})
 
 @login_required
 def records_list(request):
-    """Display past dialysis records."""
+    """Display past dialysis records for the logged-in user."""
     records = DialysisRecord.objects.filter(user=request.user).order_by("-date")
-    return render(request, "records/records_list.html", {"records": records}) 
+    
+    print(f"✅ Retrieved {records.count()} records for user {request.user}")  # Debugging
+
+    return render(request, "records/records_list.html", {"records": records})
 
 @login_required
 def edit_record(request, record_id):
@@ -71,9 +74,3 @@ def records_summary(request, period):
 
     records = DialysisRecord.objects.filter(user=request.user, date__gte=start_date).order_by("-date")
     return render(request, "records/records_summary.html", {"records": records, "period": period})
-
-@login_required
-def records_list(request):
-    """Display past dialysis records."""
-    records = DialysisRecord.objects.filter(user=request.user).order_by("-date")
-    return render(request, "records/add_record.html", {"records": records})  

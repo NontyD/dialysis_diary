@@ -4,17 +4,42 @@
     <h2>Past Dialysis Records</h2>
     
     {% if records %}
-        <ul>
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Weight Before (kg)</th>
+                <th>BP (Systolic/Diastolic)</th>
+                <th>Initial Drain Volume (ml)</th>
+                <th>Total UF (ml)</th>
+                <th>Average Dwell (hh:mm)</th>
+                <th>Lost Dwell (hh:mm)</th>
+                <th>Added Dwell (hh:mm)</th>
+                <th>Weight After (kg)</th>
+                <th>Comments</th>
+            </tr>
+        </thead>
+        <tbody>
             {% for record in records %}
-                <li>
-                    <strong>{{ record.date }}</strong> - 
-                    Weight Before: {{ record.weight_before }} kg, 
-                    Blood Pressure: {{ record.blood_pressure_diastolic }}/{{ record.blood_pressure_systolic }},
-                    UF: {{ record.total_uf }} ml
-                </li>
+            <tr>
+                <td>{{ record.date }}</td>
+                <td>{{ record.weight_before }}</td>
+                <td>{{ record.blood_pressure_systolic }}/{{ record.blood_pressure_diastolic }}</td>
+                <td>{{ record.initial_drain_volume }}</td>
+                <td>{{ record.total_uf }}</td>
+                <td>{{ record.average_dwell }}</td>
+                <td>{{ record.lost_dwell }}</td>
+                <td>{{ record.added_dwell }}</td>
+                <td>{{ record.weight_after }}</td>
+                <td>{{ record.comments|default:"-" }}</td> <!-- Show "-" if no comment -->
+            </tr>
+            {% empty %}
+            <tr><td colspan="10">No records found.</td></tr>
             {% endfor %}
-        </ul>
+        </tbody>
+    </table>
+    
     {% else %}
-        <p>No past records found.</p>
+        <p>⚠️ No past records found. Please add a record first.</p>
     {% endif %}
 {% endblock %}
