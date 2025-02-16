@@ -15,6 +15,10 @@ import os
 import dj_database_url
 if os.path.isfile('env.py'):
     import env
+import environ
+
+env = environ.Env()
+environ.Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -142,3 +146,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_URL = "/users/login/"
 
 LOGIN_REDIRECT_URL = "/users/dashboard/"
+
+GOOGLE_CALENDAR_CREDENTIALS = "calendar_app/credentials.json"
+
+GOOGLE_CALENDAR_CREDENTIALS = os.path.join(BASE_DIR, "calendar_app/credentials.json")
+GOOGLE_REDIRECT_URI = "http://127.0.0.1:8000/calendar/oauth/callback/"
