@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'pages',
     'rest_framework',
     'users',
+    'community',
 ]
 
 MIDDLEWARE = [
