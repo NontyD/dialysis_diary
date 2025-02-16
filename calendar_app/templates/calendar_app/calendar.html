@@ -1,0 +1,10 @@
+{% extends "pages/base.html" %}
+{% block content %}
+<h2>My Calendar</h2>
+<a href="{% url 'add_event' %}">Add Event</a>
+<ul>
+    {% for event in events %}
+        <li>{{ event.date|date:"F j, Y, g:i a" }} - {{ event.title }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}
