@@ -133,3 +133,8 @@ def delete_account(request):
         return redirect("login_page")  # Redirect to login page after deletion
 
     return render(request, "users/delete_account.html")
+
+@login_required
+def dashboard(request):
+    """Dashboard page with quick links to app features."""
+    return render(request, "users/dashboard.html")

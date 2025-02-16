@@ -1,0 +1,56 @@
+{% extends "pages/base.html" %}
+
+{% block title %}Dashboard - Dialysis Connect{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2>Welcome, {{ user.username }}!</h2>
+    <p>Access important features below:</p>
+
+    <div class="row">
+        <!-- Community Card -->
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Community</h5>
+                    <p class="card-text">Find support and share your experience with others in the community.</p>
+                    <a href="{% url 'community' %}" class="btn btn-primary">Go to Community</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Records Card -->
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Records</h5>
+                    <p class="card-text">Access and manage your dialysis records easily.</p>
+                    <a href="{% url 'records_list' %}" class="btn btn-primary">View Records</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Calendar Card (To Be Implemented) -->
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Calendar</h5>
+                    <p class="card-text">Store and manage your hospital appointments.</p>
+                    <a href="#" class="btn btn-secondary disabled">Coming Soon</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Upload Documents Card (To Be Implemented) -->
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Upload Documents</h5>
+                    <p class="card-text">Upload and store important documents like prescriptions.</p>
+                    <a href="#" class="btn btn-secondary disabled">Coming Soon</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

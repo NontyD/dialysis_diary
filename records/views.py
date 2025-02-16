@@ -72,7 +72,3 @@ def records_summary(request, period):
     records = DialysisRecord.objects.filter(user=request.user, date__gte=start_date).order_by("-date")
     return render(request, "records/records_summary.html", {"records": records, "period": period})
 
-@login_required
-def dashboard(request):
-    """Dashboard page with quick links to app features."""
-    return render(request, "users/dashboard.html")
