@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from .models import Post
+from .models import Post, Comment
 
 @login_required
 def community_page(request):
@@ -63,3 +63,21 @@ def delete_post(request, post_id):
         return redirect("community")  # Refresh the page
 
     return render(request, "community/confirm_delete.html", {"post": post})
+
+@login_required
+def add_comment(request, post_id):
+    """Allow a user to comment on a post."""
+    post = get_object_or_404(Post, id=post_id)
+
+    if request.method == "POST":
+        content = request.POST.get("content").strip()
+
+        if not content:
+            messages.error(request, "Comment cannot be empty.")
+        else:
+            Comment.objects.create(post=post, author=request.user, content=content)
+            messages.success(request, "Comment added successfully!")
+
+        return redirect("community")  # Refresh page to show the new comment
+
+    return redirect("community")
