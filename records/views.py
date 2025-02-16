@@ -24,9 +24,9 @@ def add_record(request):
 
 @login_required
 def records_list(request):
-    """View to display the user's dialysis records."""
+    """Display past dialysis records."""
     records = DialysisRecord.objects.filter(user=request.user).order_by("-date")
-    return render(request, "records/records_list.html", {"records": records})
+    return render(request, "records/records_list.html", {"records": records}) 
 
 @login_required
 def edit_record(request, record_id):
@@ -72,3 +72,8 @@ def records_summary(request, period):
     records = DialysisRecord.objects.filter(user=request.user, date__gte=start_date).order_by("-date")
     return render(request, "records/records_summary.html", {"records": records, "period": period})
 
+@login_required
+def records_list(request):
+    """Display past dialysis records."""
+    records = DialysisRecord.objects.filter(user=request.user).order_by("-date")
+    return render(request, "records/add_record.html", {"records": records})  

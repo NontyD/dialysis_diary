@@ -1,0 +1,20 @@
+{% extends "pages/base.html" %}
+
+{% block content %}
+    <h2>Past Dialysis Records</h2>
+    
+    {% if records %}
+        <ul>
+            {% for record in records %}
+                <li>
+                    <strong>{{ record.date }}</strong> - 
+                    Weight Before: {{ record.weight_before }} kg, 
+                    Blood Pressure: {{ record.blood_pressure_diastolic }}/{{ record.blood_pressure_systolic }},
+                    UF: {{ record.total_uf }} ml
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No past records found.</p>
+    {% endif %}
+{% endblock %}
