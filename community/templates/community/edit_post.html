@@ -1,0 +1,30 @@
+{% extends "pages/base.html" %}
+
+{% block title %}Edit Post - Dialysis Connect{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>Edit Your Post</h2>
+
+    <!-- Flash Messages -->
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+
+    <div class="card">
+        <div class="card-body">
+            <form method="POST">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="content" class="form-label">Update Your Post</label>
+                    <textarea name="content" class="form-control" rows="3" required>{{ post.content }}</textarea>
+                </div>
+                <button type="submit" class="btn btn-success">Save Changes</button>
+                <a href="{% url 'community' %}" class="btn btn-secondary">Cancel</a>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
