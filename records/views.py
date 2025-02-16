@@ -1,52 +1,78 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .models import DialysisRecord
-from datetime import timedelta
+from .forms import DialysisRecordForm
+from datetime import datetime, timedelta
 
 @login_required
 def add_record(request):
-    """Allow users to log their dialysis session."""
+    """View to handle adding a new dialysis record."""
     if request.method == "POST":
-        weight_before = request.POST.get("weight_before")
-        systolic_bp = request.POST.get("systolic_bp")
-        diastolic_bp = request.POST.get("diastolic_bp")
-        initial_drain_volume = request.POST.get("initial_drain_volume")
-        total_uf = request.POST.get("total_uf")
-        avg_dwell = request.POST.get("avg_dwell")
-        lost_dwell = request.POST.get("lost_dwell")
-        added_dwell = request.POST.get("added_dwell")
-        weight_after = request.POST.get("weight_after")
-        comments = request.POST.get("comments")
-
-        # Ensure required fields are filled
-        if not weight_before or not systolic_bp or not diastolic_bp or not weight_after:
-            messages.error(request, "All required fields must be filled.")
-            return render(request, "records/add_record.html")
-
-        # Create new record
-        DialysisRecord.objects.create(
-            user=request.user,
-            weight_before=weight_before,
-            systolic_bp=systolic_bp,
-            diastolic_bp=diastolic_bp,
-            initial_drain_volume=initial_drain_volume,
-            total_uf=total_uf,
-            avg_dwell=timedelta(hours=int(avg_dwell.split(":")[0]), minutes=int(avg_dwell.split(":")[1])),
-            lost_dwell=timedelta(hours=int(lost_dwell.split(":")[0]), minutes=int(lost_dwell.split(":")[1])),
-            added_dwell=timedelta(hours=int(added_dwell.split(":")[0]), minutes=int(added_dwell.split(":")[1])),
-            weight_after=weight_after,
-            comments=comments,
-        )
-
-        messages.success(request, "Dialysis record added successfully!")
-        return redirect("records_list")  # Redirect to records page
-
-    return render(request, "records/add_record.html")
-
+        form = DialysisRecordForm(request.POST)
+        if form.is_valid():
+            record = form.save(commit=False)  # Don't save to the DB yet
+            record.user = request.user  # Assign the logged-in user
+            record.date = datetime.today().date()  # Auto-set today's date
+            record.save()  # Now save it to the DB
+            messages.success(request, "Record added successfully!")
+            return redirect("records_list")  # Redirect to the records list
+    else:
+        form = DialysisRecordForm()  # Display an empty form
+    
+    return render(request, "records/add_record.html", {"form": form})  # Pass form to template
 
 @login_required
 def records_list(request):
-    """View past dialysis records."""
-    records = DialysisRecord.objects.filter(user=request.user)
+    """View to display the user's dialysis records."""
+    records = DialysisRecord.objects.filter(user=request.user).order_by("-date")
     return render(request, "records/records_list.html", {"records": records})
+
+@login_required
+def edit_record(request, record_id):
+    """View to handle editing an existing dialysis record."""
+    record = get_object_or_404(DialysisRecord, id=record_id, user=request.user)
+
+    if request.method == "POST":
+        form = DialysisRecordForm(request.POST, instance=record)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Record updated successfully!")
+            return redirect("records_list")
+    else:
+        form = DialysisRecordForm(instance=record)
+    
+    return render(request, "records/edit_record.html", {"form": form, "record": record})
+
+@login_required
+def delete_record(request, record_id):
+    """View to handle deleting a dialysis record."""
+    record = get_object_or_404(DialysisRecord, id=record_id, user=request.user)
+    
+    if request.method == "POST":
+        record.delete()
+        messages.success(request, "Record deleted successfully!")
+        return redirect("records_list")
+
+    return render(request, "records/delete_record.html", {"record": record})
+
+@login_required
+def records_summary(request, period):
+    """View to get dialysis records summary for the past week or month."""
+    today = datetime.today().date()
+    
+    if period == "week":
+        start_date = today - timedelta(days=7)
+    elif period == "month":
+        start_date = today - timedelta(days=30)
+    else:
+        messages.error(request, "Invalid period selected.")
+        return redirect("records_list")
+
+    records = DialysisRecord.objects.filter(user=request.user, date__gte=start_date).order_by("-date")
+    return render(request, "records/records_summary.html", {"records": records, "period": period})
+
+@login_required
+def dashboard(request):
+    """Dashboard page with quick links to app features."""
+    return render(request, "users/dashboard.html")
