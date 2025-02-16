@@ -24,5 +24,6 @@ urlpatterns = [
     path("community/", include("community.urls")),
     path("records/", include("records.urls")),
     path("calendar/", include("calendar_app.urls")),
- 
+    path("calendar/", include("calendar_app.urls")),
+    path("calendar/", include("calendar_app.urls")),
 ]
