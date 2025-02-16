@@ -36,8 +36,9 @@
                 <small class="text-muted">{{ post.created_at|date:"F d, Y H:i" }}</small>
 
                 {% if post.author == request.user %}
-                    <!-- Show Edit button only for the post owner -->
+                    <!-- Show Edit and Delete buttons only for the post owner -->
                     <a href="{% url 'edit_post' post.id %}" class="btn btn-sm btn-warning">Edit</a>
+                    <a href="{% url 'delete_post' post.id %}" class="btn btn-sm btn-danger">Delete</a>
                 {% endif %}
             </div>
         {% empty %}
