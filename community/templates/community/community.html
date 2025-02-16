@@ -34,6 +34,11 @@
                 <h5>{{ post.author.username }}</h5>
                 <p>{{ post.content }}</p>
                 <small class="text-muted">{{ post.created_at|date:"F d, Y H:i" }}</small>
+
+                {% if post.author == request.user %}
+                    <!-- Show Edit button only for the post owner -->
+                    <a href="{% url 'edit_post' post.id %}" class="btn btn-sm btn-warning">Edit</a>
+                {% endif %}
             </div>
         {% empty %}
             <p>No posts yet. Be the first to share!</p>
