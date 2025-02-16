@@ -5,6 +5,29 @@
 {% block content %}
 <div class="container mt-4">
     <h2>Community Posts</h2>
+
+    <!-- Flash Messages -->
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+
+    <!-- Post Submission Form -->
+    <div class="card mb-4">
+        <div class="card-body">
+            <form method="POST">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="content" class="form-label">Share Your Experience</label>
+                    <textarea name="content" class="form-control" rows="3" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Post</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Display Posts -->
     <div class="list-group">
         {% for post in posts %}
             <div class="list-group-item">
@@ -13,7 +36,7 @@
                 <small class="text-muted">{{ post.created_at|date:"F d, Y H:i" }}</small>
             </div>
         {% empty %}
-            <p>No posts yet.</p>
+            <p>No posts yet. Be the first to share!</p>
         {% endfor %}
     </div>
 </div>
