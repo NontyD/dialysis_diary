@@ -46,3 +46,20 @@ def edit_post(request, post_id):
         return redirect("community")  # Refresh the page
 
     return render(request, "community/edit_post.html", {"post": post})
+
+@login_required
+def delete_post(request, post_id):
+    """Allow a user to delete their own post."""
+    post = get_object_or_404(Post, id=post_id)
+
+    # Ensure the logged-in user owns the post
+    if post.author != request.user:
+        messages.error(request, "You can only delete your own posts.")
+        return redirect("community")
+
+    if request.method == "POST":
+        post.delete()
+        messages.success(request, "Post deleted successfully!")
+        return redirect("community")  # Refresh the page
+
+    return render(request, "community/confirm_delete.html", {"post": post})
