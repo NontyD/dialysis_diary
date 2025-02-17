@@ -14,6 +14,7 @@ SCOPES = ["https://www.googleapis.com/auth/calendar.events"]
 
 
 @login_required
+@login_required
 def add_event(request):
     """Allow users to create a new event."""
     if request.method == "POST":
@@ -24,9 +25,8 @@ def add_event(request):
             event.save()
             messages.success(request, "Event added successfully!")
 
-            # Sync event to Google Calendar (if user has linked Google)
-            if request.session.get("google_credentials"):
-                sync_to_google_calendar(request, event)
+            # Sync event to Google Calendar (if linked)
+            sync_to_google_calendar(request, event)
 
             return redirect("calendar_view")
     else:
@@ -109,6 +109,7 @@ def sync_to_google_calendar(request, event):
         return
 
     try:
+        # Recreate credentials from stored session
         credentials = Credentials(**credentials_data)
         service = build("calendar", "v3", credentials=credentials)
 
@@ -119,8 +120,10 @@ def sync_to_google_calendar(request, event):
             "end": {"dateTime": event.date.isoformat(), "timeZone": "UTC"},
         }
 
-        service.events().insert(calendarId="primary", body=event_data).execute()
-        messages.success(request, "Event synced to Google Calendar!")
+        created_event = service.events().insert(calendarId="primary", body=event_data).execute()
+
+        if created_event:
+            messages.success(request, "Event synced to Google Calendar!")
 
     except Exception as e:
         messages.error(request, f"Failed to sync event: {e}")
