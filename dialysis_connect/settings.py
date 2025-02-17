@@ -31,11 +31,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-co=%pxti!caco9fy!@j-2away)*&gadx17rh)iu(jaangcd5xh'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     '.herokuapp.com',
-    '127.0.0.1'
+    '127.0.0.1',
+    'localhost',
 ]
 
 
@@ -150,4 +151,5 @@ LOGIN_REDIRECT_URL = "/users/dashboard/"
 GOOGLE_CALENDAR_CREDENTIALS = "calendar_app/credentials.json"
 
 GOOGLE_CALENDAR_CREDENTIALS = os.path.join(BASE_DIR, "calendar_app/credentials.json")
-GOOGLE_REDIRECT_URI = "http://127.0.0.1:8000/calendar/oauth/callback/"
+GOOGLE_REDIRECT_URI = "http://localhost:8000/calendar/oauth/callback/"
+
