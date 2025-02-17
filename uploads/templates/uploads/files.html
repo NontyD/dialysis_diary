@@ -1,0 +1,20 @@
+{% extends "pages/base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>My Uploaded Files</h2>
+
+    {% if files %}
+        <ul>
+            {% for file in files %}
+                <li>
+                    <a href="{{ file.file.url }}" target="_blank">{{ file.file.name }}</a> 
+                    (Uploaded on {{ file.uploaded_at|date:"F d, Y" }})
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No files uploaded yet.</p>
+    {% endif %}
+</div>
+{% endblock %}
