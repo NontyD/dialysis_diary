@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'community',
     'records',
     'calendar_app',
+    'uploads',
 ]
 
 MIDDLEWARE = [
