@@ -26,7 +26,7 @@
                     <h5 class="card-title">Records</h5>
                     <p class="card-text">Access and manage your dialysis records easily.</p>
                     <a href="{% url 'add_record' %}" class="btn btn-primary">Add a Record</a>
-                    <a href="{% url 'records_list' %}" class="btn btn-secondary">View Records</a>
+                    <a href="{% url 'records_list' %}" class="btn btn-primary">View Records</a>
                 </div>
             </div>
         </div>
@@ -37,7 +37,8 @@
                 <div class="card-body">
                     <h5 class="card-title">Calendar</h5>
                     <p class="card-text">Store and manage your hospital appointments.</p>
-                    <a href="{% url 'calendar_view' %}" class="btn btn-primary">Calendar</a>
+                    <a href="{% url 'add_event' %}" class="btn btn-primary">Add Event</a>
+                    <a href="{% url 'calendar_view' %}" class="btn btn-primary">View Calendar</a>
                 </div>
             </div>
         </div>
@@ -48,7 +49,9 @@
                 <div class="card-body">
                     <h5 class="card-title">Upload Documents</h5>
                     <p class="card-text">Upload and store important documents like prescriptions.</p>
-                    <a href="#" class="btn btn-secondary disabled">Coming Soon</a>
+                    <a href="{% url 'uploads:upload_file' %}" class="btn btn-primary">Upload File</a>
+                    <a href="{% url 'uploads:upload_list' %}" class="btn btn-primary">View Uploaded Files</a>
+
                 </div>
             </div>
         </div>

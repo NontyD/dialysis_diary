@@ -3,6 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .models import UploadedFile
 from .forms import UploadForm
+from django.urls import reverse
 
 @login_required
 def upload_file(request):
@@ -14,7 +15,7 @@ def upload_file(request):
             uploaded_file.user = request.user  # Associate with user
             uploaded_file.save()
             messages.success(request, "File uploaded successfully!")
-            return redirect("uploaded_files")
+            return redirect(reverse("uploads:uploaded_files"))  
     else:
         form = UploadForm()
 
