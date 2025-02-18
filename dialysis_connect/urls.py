@@ -2,6 +2,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
+from django.contrib.auth.views import LogoutView
 
 urlpatterns = [
     path('', include('pages.urls')),
@@ -11,6 +12,7 @@ urlpatterns = [
     path('records/', include('records.urls')),
     path('calendar/', include('calendar_app.urls')),
     path("uploads/", include("uploads.urls", namespace="uploads")),
+    path('logout/', LogoutView.as_view(next_page='landing'), name='logout'),
 ]
 
 if settings.DEBUG:
