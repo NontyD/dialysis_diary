@@ -42,4 +42,8 @@
     {% else %}
         <p>⚠️ No past records found. Please add a record first.</p>
     {% endif %}
+    <div class="text-center mt-4">
+        <a href="{% url 'dashboard' %}" class="btn btn-secondary">Back to Dashboard</a>
+    </div>
+    
 {% endblock %}
