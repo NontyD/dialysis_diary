@@ -8,12 +8,15 @@ from datetime import datetime
 from google.oauth2.credentials import Credentials
 from google_auth_oauthlib.flow import Flow
 from googleapiclient.discovery import build
+import os
 
 # Google Calendar API Scopes
 SCOPES = ["https://www.googleapis.com/auth/calendar.events"]
 
+# Use the environment variable for credentials
+GOOGLE_CREDENTIALS_PATH = os.getenv("GOOGLE_CREDENTIALS_PATH", "calendar_app/credentials.json")
 
-@login_required
+
 @login_required
 def add_event(request):
     """Allow users to create a new event."""
@@ -51,7 +54,7 @@ def google_calendar_auth(request):
 
     try:
         flow = Flow.from_client_secrets_file(
-            settings.GOOGLE_CALENDAR_CREDENTIALS,
+            GOOGLE_CREDENTIALS_PATH,  # Secure path
             scopes=SCOPES,
             redirect_uri=settings.GOOGLE_REDIRECT_URI
         )
@@ -74,7 +77,7 @@ def google_calendar_callback(request):
     """Handle Google's callback and store user credentials."""
     try:
         flow = Flow.from_client_secrets_file(
-            settings.GOOGLE_CALENDAR_CREDENTIALS,
+            GOOGLE_CREDENTIALS_PATH,  # Secure path
             scopes=SCOPES,
             redirect_uri=settings.GOOGLE_REDIRECT_URI
         )

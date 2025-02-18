@@ -7,14 +7,14 @@ import os
 import dj_database_url
 import environ
 
-# ✅ Define BASE_DIR at the top before using it
+# Define BASE_DIR at the top before using it
 BASE_DIR = Path(__file__).resolve().parent.parent  
 
-# ✅ Load environment variables
+# Load environment variables
 env = environ.Env()
 environ.Env.read_env()
 
-# ✅ Security settings
+# Security settings
 SECRET_KEY = env("SECRET_KEY", default="django-insecure-co=%pxti!caco9fy!@j-2away)*&gadx17rh)iu(jaangcd5xh")
 DEBUG = env.bool("DEBUG", default=True)
 
@@ -24,7 +24,7 @@ ALLOWED_HOSTS = [
     "localhost",
 ]
 
-# ✅ Database Configuration (Fixing the TypeError issue)
+# Database Configuration (Fixing the TypeError issue)
 DATABASE_URL = os.environ.get("DATABASE_URL", "")
 
 if DATABASE_URL:
@@ -32,7 +32,6 @@ if DATABASE_URL:
         "default": dj_database_url.parse(DATABASE_URL, conn_max_age=600)
     }
 else:
-    print("⚠️ DATABASE_URL not set. Using default SQLite for local development.")
     DATABASES = {
         "default": {
             "ENGINE": "django.db.backends.sqlite3",
@@ -40,7 +39,7 @@ else:
         }
     }
 
-# ✅ Application definition
+# Application definition
 INSTALLED_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
@@ -87,7 +86,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "dialysis_connect.wsgi.application"
 
-# ✅ Password validation
+# Password validation
 AUTH_PASSWORD_VALIDATORS = [
     {"NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"},
     {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator"},
@@ -95,27 +94,28 @@ AUTH_PASSWORD_VALIDATORS = [
     {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator"},
 ]
 
-# ✅ Localization settings
+# Localization settings
 LANGUAGE_CODE = "en-us"
 TIME_ZONE = "UTC"
 USE_I18N = True
 USE_TZ = True
 
-# ✅ Static and media files settings
+# Static and media files settings
 STATIC_URL = "/static/"
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
 
-# ✅ Authentication settings
+# Authentication settings
 LOGIN_URL = "/users/login/"
 LOGIN_REDIRECT_URL = "/users/dashboard/"
 
-# ✅ Google Calendar API settings
+# Google Calendar API settings
 GOOGLE_CALENDAR_CREDENTIALS = BASE_DIR / "calendar_app/credentials.json"
 GOOGLE_REDIRECT_URI = "http://localhost:8000/calendar/oauth/callback/"
+GOOGLE_CREDENTIALS_PATH = os.getenv("GOOGLE_CREDENTIALS_PATH", "calendar_app/credentials.json")
 
 
-# ✅ Default primary key field type
+# Default primary key field type
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
