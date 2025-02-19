@@ -12,7 +12,7 @@ urlpatterns = [
     path('records/', include('records.urls')),
     path('calendar/', include('calendar_app.urls')),
     path("uploads/", include("uploads.urls", namespace="uploads")),
-    path('logout/', LogoutView.as_view(next_page='landing'), name='logout'),
+    path('logout/', LogoutView.as_view(next_page='landing_page'), name='logout'),
 ]
 
 if settings.DEBUG:
