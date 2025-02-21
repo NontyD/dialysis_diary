@@ -4,6 +4,7 @@ from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 import json
 from .models import Event
+from django.utils.dateparse import parse_datetime
 
 
 @login_required
