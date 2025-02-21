@@ -1,10 +1,10 @@
 from django.urls import path
-from .views import add_event, calendar_view
-from .views import google_calendar_auth, google_calendar_callback
+from .views import calendar_view, event_list, add_event, update_event, delete_event
 
 urlpatterns = [
-    path("add/", add_event, name="add_event"),
     path("", calendar_view, name="calendar_view"),
-    path("oauth/", google_calendar_auth, name="google_calendar_auth"),
-    path("oauth/callback/", google_calendar_callback, name="google_calendar_callback"),
+    path("events/", event_list, name="event_list"),
+    path("add_event/", add_event, name="add_event"),
+    path("update_event/<int:event_id>/", update_event, name="update_event"),
+    path("delete_event/<int:event_id>/", delete_event, name="delete_event"),
 ]

@@ -1,13 +1,20 @@
 from django.db import models
-from django.contrib.auth.models import User
-from datetime import datetime
+from django.conf import settings
+from django.utils.timezone import make_aware, now
+
+end = models.DateTimeField(default=now)
+
 
 class Event(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     title = models.CharField(max_length=255)
-    description = models.TextField(blank=True)
-    date = models.DateTimeField()
-    created_at = models.DateTimeField(auto_now_add=True)
+    start = models.DateTimeField()  
+    end = models.DateTimeField()
 
-    def __str__(self):
-        return self.title
+    def save(self, *args, **kwargs):
+        """Ensure datetimes are timezone-aware."""
+        if self.start and not self.start.tzinfo:
+            self.start = make_aware(self.start)
+        if self.end and not self.end.tzinfo:
+            self.end = make_aware(self.end)
+        super().save(*args, **kwargs)
