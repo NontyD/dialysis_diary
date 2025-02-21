@@ -1,10 +1,16 @@
 {% extends "pages/base.html" %}
 
 {% block content %}
-    <h2>Past Dialysis Records</h2>
-    
+{% load static %}
+
+<!-- Load custom CSS -->
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+<div class="records-container">
+    <h2 class="text-center">Past Dialysis Records</h2>
+
     {% if records %}
-    <table>
+    <table class="records-table">
         <thead>
             <tr>
                 <th>Date</th>
@@ -22,28 +28,30 @@
         <tbody>
             {% for record in records %}
             <tr>
-                <td>{{ record.date }}</td>
-                <td>{{ record.weight_before }}</td>
-                <td>{{ record.blood_pressure_systolic }}/{{ record.blood_pressure_diastolic }}</td>
-                <td>{{ record.initial_drain_volume }}</td>
-                <td>{{ record.total_uf }}</td>
-                <td>{{ record.average_dwell }}</td>
-                <td>{{ record.lost_dwell }}</td>
-                <td>{{ record.added_dwell }}</td>
-                <td>{{ record.weight_after }}</td>
-                <td>{{ record.comments|default:"-" }}</td> <!-- Show "-" if no comment -->
+                <td data-label="Date">{{ record.date }}</td>
+                <td data-label="Weight Before (kg)">{{ record.weight_before }}</td>
+                <td data-label="BP (Systolic/Diastolic)">
+                    {{ record.blood_pressure_systolic }}/{{ record.blood_pressure_diastolic }}
+                </td>
+                <td data-label="Initial Drain Volume (ml)">{{ record.initial_drain_volume }}</td>
+                <td data-label="Total UF (ml)">{{ record.total_uf }}</td>
+                <td data-label="Average Dwell (hh:mm)">{{ record.average_dwell }}</td>
+                <td data-label="Lost Dwell (hh:mm)">{{ record.lost_dwell }}</td>
+                <td data-label="Added Dwell (hh:mm)">{{ record.added_dwell }}</td>
+                <td data-label="Weight After (kg)">{{ record.weight_after }}</td>
+                <td data-label="Comments">{{ record.comments|default:"-" }}</td>
             </tr>
             {% empty %}
-            <tr><td colspan="10">No records found.</td></tr>
+            <tr><td colspan="10" class="no-records">⚠️ No records found. Please add a record first.</td></tr>
             {% endfor %}
         </tbody>
     </table>
-    
     {% else %}
-        <p>⚠️ No past records found. Please add a record first.</p>
+    <p class="no-records">⚠️ No past records found. Please add a record first.</p>
     {% endif %}
-    <div class="text-center mt-4">
-        <a href="{% url 'dashboard' %}" class="btn btn-secondary">Back to Dashboard</a>
-    </div>
-    
+</div>
+
+<div class="text-center">
+    <a href="{% url 'dashboard' %}" class="btn btn-secondary">Back to Dashboard</a>
+</div>
 {% endblock %}

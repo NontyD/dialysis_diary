@@ -70,4 +70,78 @@
 
 .btn-secondary:hover {
     background: #545b62;
+} 
+/* Container for records table */
+.records-container {
+    max-width: 95%;
+    margin: 40px auto;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    overflow-x: auto;
+}
+
+/* Table styles */
+.records-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+/* Table headers */
+.records-table thead {
+    background: #007bff;
+    color: white;
+}
+
+.records-table th, .records-table td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.records-table th {
+    font-weight: bold;
+}
+
+.records-table tbody tr:nth-child(even) {
+    background: #f8f9fa;
+}
+
+/* Message styling for no records */
+.no-records {
+    text-align: center;
+    font-size: 18px;
+    color: #888;
+    margin-top: 20px;
+}
+
+/* Responsive table: Rotates to vertical layout on small screens */
+@media (max-width: 768px) {
+    .records-table thead {
+        display: none;
+    }
+
+    .records-table tbody tr {
+        display: block;
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 10px;
+        background: #f9f9f9;
+    }
+
+    .records-table td {
+        display: flex;
+        justify-content: space-between;
+        padding: 8px;
+        border: none;
+    }
+
+    .records-table td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        color: #007bff;
+    }
 }
