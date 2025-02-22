@@ -1,0 +1,97 @@
+/* Community Page Styling */
+.community-container {
+    max-width: 800px;
+    margin: auto;
+}
+
+/* Flash Messages */
+.alert {
+    border-radius: 8px;
+    padding: 10px 15px;
+    font-size: 14px;
+}
+
+/* Post Submission Card */
+.card {
+    border-radius: 10px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Post Styling */
+.list-group-item {
+    background: #fff;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    padding: 15px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.list-group-item h5 {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.list-group-item small {
+    color: gray;
+    font-size: 12px;
+}
+
+/* Comment Section */
+.list-group {
+    margin-top: 10px;
+}
+
+.list-group-item ul {
+    padding-left: 10px;
+}
+
+.list-group-item li {
+    background: #f9f9f9;
+    border-radius: 6px;
+    padding: 8px;
+    margin-top: 5px;
+}
+
+/* Form Input & Buttons */
+textarea.form-control {
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.input-group .form-control {
+    border-radius: 8px 0 0 8px;
+}
+
+.input-group .btn {
+    border-radius: 0 8px 8px 0;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    border-radius: 6px;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    border: none;
+    border-radius: 6px;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border: none;
+    border-radius: 6px;
+}
+
+.btn-warning {
+    background-color: #ffc107;
+    border: none;
+    border-radius: 6px;
+}
+
+/* Center Dashboard Button */
+.text-center {
+    margin-top: 20px;
+}
