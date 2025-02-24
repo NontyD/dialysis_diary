@@ -16,9 +16,10 @@ environ.Env.read_env()
 
 # Security settings
 SECRET_KEY = env("SECRET_KEY", default="django-insecure-co=%pxti!caco9fy!@j-2away)*&gadx17rh)iu(jaangcd5xh")
-DEBUG = env.bool("DEBUG", default=True)
+DEBUG = env.bool("DEBUG", default=False)
 
-ALLOWED_HOSTS = [
+ALLOWED_HOSTS = [ 
+    "*",  
     ".herokuapp.com",
     "127.0.0.1",
     "localhost",
