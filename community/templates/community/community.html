@@ -1,10 +1,13 @@
 {% extends "pages/base.html" %}
-{% load static %}
+
 {% block title %}Community - Dialysis Connect{% endblock %}
 
 {% block extra_css %}
 
-    <link rel="stylesheet" href="{% static 'css/community.css' %}">
+<!-- Load custom CSS -->
+{% load static %}
+
+    <link rel="stylesheet" href="{% static 'community/css/community.css' %}">
 
 {% endblock %}
 

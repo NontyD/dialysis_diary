@@ -66,6 +66,8 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
+MIDDLEWARE.insert(1, "whitenoise.middleware.WhiteNoiseMiddleware")
+
 
 ROOT_URLCONF = "dialysis_connect.urls"
 
@@ -104,6 +106,15 @@ USE_TZ = True
 # Static and media files settings
 STATIC_URL = "/static/"
 STATIC_ROOT = BASE_DIR / "staticfiles"
+STATICFILES_DIRS = [
+    BASE_DIR / "calendar_app/static",
+    BASE_DIR / "community/static",
+    BASE_DIR / "records/static",
+    BASE_DIR / "pages/static",
+    BASE_DIR / "uploads/static",
+    BASE_DIR / "users/static",
+]
+
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
