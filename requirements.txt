@@ -24,6 +24,7 @@ psycopg2-binary==2.9.10
 pyasn1==0.6.1
 pyasn1_modules==0.4.1
 pyparsing==3.2.1
+pytz==2025.1
 requests==2.32.3
 requests-oauthlib==2.0.0
 rsa==4.9
@@ -33,3 +34,4 @@ typing_extensions==4.12.2
 tzdata==2025.1
 uritemplate==4.1.1
 urllib3==2.3.0
+whitenoise==6.9.0
