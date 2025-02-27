@@ -5,21 +5,23 @@ from .models import UploadedFile
 from .forms import UploadForm
 from django.urls import reverse
 
+
 @login_required
 def upload_file(request):
-    """Handle file uploads."""
+    """Handle file uploads with a custom name."""
     if request.method == "POST":
         form = UploadForm(request.POST, request.FILES)
         if form.is_valid():
             uploaded_file = form.save(commit=False)
-            uploaded_file.user = request.user  # Associate with user
+            uploaded_file.user = request.user
             uploaded_file.save()
-            messages.success(request, "File uploaded successfully!")
-            return redirect(reverse("uploads:uploaded_files"))  
+            messages.success(request, f"File '{uploaded_file.name}' uploaded successfully!")
+            return redirect(reverse("uploads:uploaded_files"))
     else:
         form = UploadForm()
 
     return render(request, "uploads/upload.html", {"form": form})
+
 
 @login_required
 def uploaded_files(request):

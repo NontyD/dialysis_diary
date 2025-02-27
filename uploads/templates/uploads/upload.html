@@ -10,14 +10,20 @@
         {% endfor %}
     {% endif %}
 
-    <form method="post" enctype="multipart/form-data">
+    <form method="post" enctype="multipart/form-data" class="shadow p-4 rounded bg-light">
         {% csrf_token %}
-        {{ form.as_p }}
+        <div class="mb-3">
+            <label for="id_name" class="form-label">File Name</label>
+            {{ form.name }}
+        </div>
+        <div class="mb-3">
+            <label for="id_file" class="form-label">Choose File</label>
+            {{ form.file }}
+        </div>
         <button type="submit" class="btn btn-primary">Upload</button>
     </form>
 </div>
 <div class="text-center mt-4">
     <a href="{% url 'dashboard' %}" class="btn btn-secondary">Back to Dashboard</a>
 </div>
-
 {% endblock %}
