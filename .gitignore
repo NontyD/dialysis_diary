@@ -8,3 +8,4 @@ node_modules/
 .github/
 cloudinary_python.txtcalendar_app/credentials.json
 calendar_app/credentials.json
+calendar_app/credentials.json
