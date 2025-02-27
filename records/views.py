@@ -7,57 +7,33 @@ from datetime import datetime, timedelta
 
 @login_required
 def add_record(request):
-    """View to handle adding a new dialysis record."""
+    """View to handle adding a new dialysis record with confirmation."""
     if request.method == "POST":
         form = DialysisRecordForm(request.POST)
         if form.is_valid():
-            record = form.save(commit=False)
-            record.user = request.user
-            record.date = datetime.today().date()
-            record.save()
-            messages.success(request, "Record added successfully!")
-            return redirect("records_list")  
+            if "confirm" in request.POST:
+                # User confirmed, save the record
+                record = form.save(commit=False)
+                record.user = request.user
+                record.date = datetime.today().date()
+                record.save()
+                messages.success(request, "Record added successfully!")
+                return redirect("records_list")
+            else:
+                # Show confirmation page
+                return render(request, "records/confirm_record.html", {"form": form})
     else:
         form = DialysisRecordForm()
-    
-    return render(request, "records/add_record.html", {"form": form})
 
+    return render(request, "records/add_record.html", {"form": form})
 @login_required
 def records_list(request):
     """Display past dialysis records for the logged-in user."""
-    records = DialysisRecord.objects.filter(user=request.user).order_by("-date")
-    
-    print(f"✅ Retrieved {records.count()} records for user {request.user}")  # Debugging
+    records = DialysisRecord.objects.filter(user=request.user).order_by("-date")    
+
 
     return render(request, "records/records_list.html", {"records": records})
 
-@login_required
-def edit_record(request, record_id):
-    """View to handle editing an existing dialysis record."""
-    record = get_object_or_404(DialysisRecord, id=record_id, user=request.user)
-
-    if request.method == "POST":
-        form = DialysisRecordForm(request.POST, instance=record)
-        if form.is_valid():
-            form.save()
-            messages.success(request, "Record updated successfully!")
-            return redirect("records_list")
-    else:
-        form = DialysisRecordForm(instance=record)
-    
-    return render(request, "records/edit_record.html", {"form": form, "record": record})
-
-@login_required
-def delete_record(request, record_id):
-    """View to handle deleting a dialysis record."""
-    record = get_object_or_404(DialysisRecord, id=record_id, user=request.user)
-    
-    if request.method == "POST":
-        record.delete()
-        messages.success(request, "Record deleted successfully!")
-        return redirect("records_list")
-
-    return render(request, "records/delete_record.html", {"record": record})
 
 @login_required
 def records_summary(request, period):

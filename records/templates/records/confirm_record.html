@@ -1,0 +1,38 @@
+{% extends "pages/base.html" %}
+
+{% block title %}Confirm Dialysis Record{% endblock %}
+
+{% block content %}
+{% load static %}
+
+<!-- Link external CSS -->
+<link rel="stylesheet" href="{% static 'records/css/style.css' %}">
+
+<div class="form-container">
+    <h2>Confirm Your Dialysis Record</h2>
+    <p>Please review your record before saving. Once submitted, changes cannot be made.</p>
+
+    <div class="record-details">
+        <ul>
+            {% for field in form %}
+                <li><strong>{{ field.label }}:</strong> {{ field.value }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <form method="post">
+        {% csrf_token %}
+        <!-- Hidden inputs to preserve the form data -->
+        {% for field in form %}
+            <input type="hidden" name="{{ field.name }}" value="{{ field.value }}">
+        {% endfor %}
+        <button type="submit" name="confirm" class="btn btn-success">Confirm & Save</button>
+        <a href="{% url 'add_record' %}" class="btn btn-secondary">Go Back</a>
+    </form>
+</div>
+
+<div class="text-center">
+    <a href="{% url 'dashboard' %}" class="btn btn-secondary">Back to Dashboard</a>
+</div>
+
+{% endblock %}
