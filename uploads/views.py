@@ -1,9 +1,10 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .models import UploadedFile
 from .forms import UploadForm
 from django.urls import reverse
+
 
 
 @login_required
@@ -28,3 +29,16 @@ def uploaded_files(request):
     """List uploaded files."""
     files = UploadedFile.objects.filter(user=request.user).order_by("-uploaded_at")
     return render(request, "uploads/files.html", {"files": files})
+
+
+@login_required
+def delete_file(request, file_id):
+    """Allow users to delete their uploaded files."""
+    file = get_object_or_404(UploadedFile, id=file_id, user=request.user)
+
+    if request.method == "POST":
+        file.delete()
+        messages.success(request, "File deleted successfully!")
+        return redirect("uploads:uploaded_files")
+
+    return redirect("uploads:uploaded_files")
