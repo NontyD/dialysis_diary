@@ -19,7 +19,7 @@ SECRET_KEY = env("SECRET_KEY", default="django-insecure-co=%pxti!caco9fy!@j-2awa
 DEBUG = env.bool("DEBUG", default=True)
 
 ALLOWED_HOSTS = [ 
-    "*",  
+    "*", 
     ".herokuapp.com",
     "127.0.0.1",
     "localhost",
@@ -74,7 +74,7 @@ ROOT_URLCONF = "dialysis_connect.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [BASE_DIR / "templates"],  
+        "DIRS": [BASE_DIR / "templates"],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
