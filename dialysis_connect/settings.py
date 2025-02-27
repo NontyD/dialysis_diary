@@ -6,6 +6,7 @@ from pathlib import Path
 import os
 import dj_database_url
 import environ
+import cloudinary
 
 # Define BASE_DIR at the top before using it
 BASE_DIR = Path(__file__).resolve().parent.parent  
@@ -13,6 +14,23 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Load environment variables
 env = environ.Env()
 environ.Env.read_env()
+
+# Cloudinary settings
+cloudinary.config(
+    cloud_name=env("dzibrzlq9"),
+    api_key=env("657566237399226"),
+    api_secret=env("_CP95mQJPb5EQG8z7og9ok3O-ds"),
+)
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'dzibrzlq9',
+    'API_KEY': '657566237399226',
+    'API_SECRET': '_CP95mQJPb5EQG8z7og9ok3O-ds',
+}
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+
+
 
 # Security settings
 SECRET_KEY = env("SECRET_KEY", default="django-insecure-co=%pxti!caco9fy!@j-2away)*&gadx17rh)iu(jaangcd5xh")
@@ -49,6 +67,8 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "rest_framework",
+    'cloudinary_storage',
+    'cloudinary',
     "pages",
     "users",
     "community",

@@ -1,8 +1,11 @@
 from django.db import models
 from django.contrib.auth.models import User
 from datetime import datetime
+from cloudinary.models import CloudinaryField
+
 
 class DialysisRecord(models.Model):
+    image = CloudinaryField('image')
     user = models.ForeignKey(User, on_delete=models.CASCADE)  # Link to user
     date = models.DateField(default=datetime.today)  # Auto-set current date
     weight_before = models.FloatField(help_text="Weight before dialysis (kg)")
@@ -21,4 +24,3 @@ class DialysisRecord(models.Model):
 
     def __str__(self):
         return f"{self.user.username} - {self.date}"
-
