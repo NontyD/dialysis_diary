@@ -27,12 +27,12 @@ CLOUDINARY_STORAGE = {
 SECRET_KEY = env("SECRET_KEY")
 DEBUG = env.bool("DEBUG", default=False)
 
-ALLOWED_HOSTS = env("ALLOWED_HOSTS", default="127.0.0.1,localhost").split(",")
-DATABASE_URL = env("DATABASE_URL", default="")
+ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
+DATABASE_URL = os.getenv("DATABASE_URL", "")
 
 if DATABASE_URL:
     DATABASES = {
-        'default': dj_database_url.config(default=DATABASE_URL)  # REMOVE extra "engine"
+        'default': dj_database_url.config(default=DATABASE_URL, conn_max_age=600)
     }
 else:
     DATABASES = {
@@ -41,6 +41,7 @@ else:
             "NAME": BASE_DIR / "db.sqlite3",
         }
     }
+    
 # Installed apps
 INSTALLED_APPS = [
     "django.contrib.admin",
