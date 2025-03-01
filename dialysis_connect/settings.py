@@ -1,14 +1,10 @@
-"""
-Django settings for dialysis_connect project.
-"""
-
 from pathlib import Path
 import os
 import dj_database_url
 import environ
 import cloudinary
 
-# Define BASE_DIR at the top before using it
+# Define BASE_DIR
 BASE_DIR = Path(__file__).resolve().parent.parent  
 
 # Load environment variables
@@ -17,34 +13,22 @@ environ.Env.read_env()
 
 # Cloudinary settings
 cloudinary.config(
-    cloud_name=env("dzibrzlq9"),
-    api_key=env("657566237399226"),
-    api_secret=env("_CP95mQJPb5EQG8z7og9ok3O-ds"),
+    cloud_name=env("CLOUDINARY_CLOUD_NAME"),
+    api_key=env("CLOUDINARY_API_KEY"),
+    api_secret=env("CLOUDINARY_API_SECRET"),
 )
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'dzibrzlq9',
-    'API_KEY': '657566237399226',
-    'API_SECRET': '_CP95mQJPb5EQG8z7og9ok3O-ds',
+    "CLOUD_NAME": env("CLOUDINARY_CLOUD_NAME"),
+    "API_KEY": env("CLOUDINARY_API_KEY"),
+    "API_SECRET": env("CLOUDINARY_API_SECRET"),
 }
 
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+# Load environment variables
+SECRET_KEY = env("SECRET_KEY")
+DEBUG = env.bool("DEBUG", default=False)
 
-
-
-
-# Security settings
-SECRET_KEY = env("SECRET_KEY", default="django-insecure-co=%pxti!caco9fy!@j-2away)*&gadx17rh)iu(jaangcd5xh")
-DEBUG = env.bool("DEBUG", default=True)
-
-ALLOWED_HOSTS = [ 
-    "*", 
-    ".herokuapp.com",
-    "127.0.0.1",
-    "localhost",
-]
-
-# Database Configuration (Fixing the TypeError issue)
-DATABASE_URL = os.environ.get("DATABASE_URL", "")
+ALLOWED_HOSTS = env("ALLOWED_HOSTS", default="127.0.0.1,localhost").split(",")
+DATABASE_URL = env("DATABASE_URL", default="")
 
 if DATABASE_URL:
     DATABASES = {
@@ -58,7 +42,8 @@ else:
         }
     }
 
-# Application definition
+
+# Installed apps
 INSTALLED_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
@@ -67,8 +52,8 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "rest_framework",
-    'cloudinary_storage',
-    'cloudinary',
+    "cloudinary_storage",
+    "cloudinary",
     "pages",
     "users",
     "community",
@@ -77,8 +62,10 @@ INSTALLED_APPS = [
     "uploads",
 ]
 
+# Middleware
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -86,11 +73,8 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
-MIDDLEWARE.insert(1, "whitenoise.middleware.WhiteNoiseMiddleware")
 
-
-ROOT_URLCONF = "dialysis_connect.urls"
-
+# Templates
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
@@ -107,6 +91,7 @@ TEMPLATES = [
     },
 ]
 
+# WSGI application
 WSGI_APPLICATION = "dialysis_connect.wsgi.application"
 
 # Password validation
@@ -123,7 +108,7 @@ TIME_ZONE = "UTC"
 USE_I18N = True
 USE_TZ = True
 
-# Static and media files settings
+# Static files settings
 STATIC_URL = "/static/"
 STATIC_ROOT = BASE_DIR / "staticfiles"
 STATICFILES_DIRS = [
@@ -134,10 +119,11 @@ STATICFILES_DIRS = [
     BASE_DIR / "uploads/static",
     BASE_DIR / "users/static",
 ]
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
-
+# Media files settings
 MEDIA_URL = "/media/"
-MEDIA_ROOT = BASE_DIR / "media"
+DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
 
 # Authentication settings
 LOGIN_URL = "/users/login/"
@@ -146,8 +132,9 @@ LOGIN_REDIRECT_URL = "/users/dashboard/"
 # Google Calendar API settings
 GOOGLE_CALENDAR_CREDENTIALS = BASE_DIR / "calendar_app/credentials.json"
 GOOGLE_REDIRECT_URI = "http://localhost:8000/calendar/oauth/callback/"
-GOOGLE_CREDENTIALS_PATH = os.getenv("GOOGLE_CREDENTIALS_PATH", "calendar_app/credentials.json")
-
+GOOGLE_CREDENTIALS_PATH = env("GOOGLE_CREDENTIALS_PATH", default="calendar_app/credentials.json")
 
 # Default primary key field type
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+ROOT_URLCONF = "dialysis_connect.urls"

@@ -13,12 +13,12 @@
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit" class="btn btn-primary">Proceed to Confirmation</button>
+        <button type="submit" class="btn btn-success">Proceed to Confirmation</button>
     </form>
 </div>
 
 <div class="text-center">
-    <a href="{% url 'dashboard' %}" class="btn btn-secondary">Back to Dashboard</a>
+    <a href="{% url 'dashboard' %}" class="btn btn-success">Back to Dashboard</a>
 </div>
 
 {% endblock %}

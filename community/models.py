@@ -6,7 +6,8 @@ from cloudinary.models import CloudinaryField
 
 
 class Post(models.Model):
-    image = CloudinaryField('image')
+    image = CloudinaryField('image', blank=True, null=True)
+
     author = models.ForeignKey(User, on_delete=models.CASCADE)  # Link to user
     content = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)  # Timestamp
