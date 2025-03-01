@@ -27,21 +27,28 @@ CLOUDINARY_STORAGE = {
 SECRET_KEY = env("SECRET_KEY")
 DEBUG = env.bool("DEBUG", default=False)
 
+BASE_DIR = Path(__file__).resolve().parent.parent
+
 ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
-DATABASE_URL = os.getenv("DATABASE_URL", "")
+
+DATABASE_URL = os.getenv("DATABASE_URL")
 
 if DATABASE_URL:
     DATABASES = {
         'default': dj_database_url.config(default=DATABASE_URL, conn_max_age=600)
     }
 else:
+    print("⚠️ Warning: DATABASE_URL is missing. Using default PostgreSQL settings.")
     DATABASES = {
         "default": {
-            "ENGINE": "django.db.backends.sqlite3",
-            "NAME": BASE_DIR / "db.sqlite3",
+            "ENGINE": "django.db.backends.postgresql",
+            "NAME": os.getenv("PGDATABASE", "dialysis_diary"),
+            "USER": os.getenv("PGUSER", "postgres"),
+            "PASSWORD": os.getenv("PGPASSWORD", ""),
+            "HOST": os.getenv("PGHOST", "127.0.0.1"),
+            "PORT": os.getenv("PGPORT", "5432"),
         }
-    }
-    
+    }    
 # Installed apps
 INSTALLED_APPS = [
     "django.contrib.admin",
