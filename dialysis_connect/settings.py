@@ -32,7 +32,10 @@ DATABASE_URL = env("DATABASE_URL", default="")
 
 if DATABASE_URL:
     DATABASES = {
-        "default": dj_database_url.parse(DATABASE_URL, conn_max_age=600)
+        'default': dj_database_url.config(
+            default=DATABASE_URL,
+            engine='django.db.backends.postgresql'  # Explicitly set PostgreSQL engine
+        )
     }
 else:
     DATABASES = {
@@ -40,7 +43,7 @@ else:
             "ENGINE": "django.db.backends.sqlite3",
             "NAME": BASE_DIR / "db.sqlite3",
         }
-    }
+    }    }
 
 
 # Installed apps
