@@ -35,7 +35,7 @@ DATABASE_URL = os.getenv("DATABASE_URL")
 
 if DATABASE_URL:
     DATABASES = {
-        'default': dj_database_url.config(default=DATABASE_URL, conn_max_age=600)
+        'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
     }
 else:
     print("⚠️ Warning: DATABASE_URL is missing. Using default PostgreSQL settings.")
