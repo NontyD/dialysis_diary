@@ -1,4 +1,11 @@
-<h1 align="center">🥃 <a href="https://dialysisdiary-b28cf5143cfa.herokuapp.com/">Dialysis Connect</a> 🥃</h1>
+<h1 align="center"><a href="https://dialysisdiary-b28cf5143cfa.herokuapp.com/">Dialysis Connect</a></h1>
+
+[![GitHub commit activity](https://img.shields.io/github/commit-activity/t/NontyD/dialysis_diary)](https://github.com/NontyD/dialysis_diary/commits/main)
+
+[![GitHub last commit](https://img.shields.io/github/last-commit/NontyD/dialysis_diary)](https://github.com/NontyD/dialysis_diary/commits/main)
+
+[![GitHub repo size](https://img.shields.io/github/repo-size/NontyD/dialysis_diary)](https://github.com/NontyD/dialysis_diary)
+
 
 ![Responsiveness](images_documentation/lighthouse_scores/responsive.png)
 
@@ -62,7 +69,7 @@
 
 - [Tools used](#tools-used)
 
-[Migration from Gitpod to VS code](#migration)
+[Migration from Gitpod to VS code](#migration-from-gitpod-to-vs-code)
 
 [Fixed bugs](#fixed-bugs)
 
@@ -162,7 +169,8 @@
 
 ### Database design
 
-The database was designed to allow CRUD functionality to registered users.
+![ERD](https://res.cloudinary.com/dzibrzlq9/image/upload/v1740884780/DialysisConnect_gauzuh.png)
+
 
 The ERD (Entity Relationship Diagram) was designed on [dbdiagram.io](https://dbdiagram.io/d/DialysisConnect-67c39901263d6cf9a0e91d6d)
 
