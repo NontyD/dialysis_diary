@@ -7,31 +7,34 @@
     <title>{% block title %}Dialysis Connect{% endblock %}</title>
 
     <!-- Standard Favicon -->
-<link rel="icon" type="image/x-icon" href="https://res.cloudinary.com/dzibrzlq9/image/upload/v1740933969/favicon_mnlviv.ico">
+    <link rel="icon" type="image/x-icon" href="https://res.cloudinary.com/dzibrzlq9/image/upload/v1740933969/favicon_mnlviv.ico">
 
-<!-- 32x32 Favicon -->
-<link rel="icon" type="image/png" sizes="32x32" href="https://res.cloudinary.com/dzibrzlq9/image/upload/v1740933973/favicon-32x32_uzp3io.png">
+    <!-- 32x32 Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="https://res.cloudinary.com/dzibrzlq9/image/upload/v1740933973/favicon-32x32_uzp3io.png">
 
-<!-- 16x16 Favicon -->
-<link rel="icon" type="image/png" sizes="16x16" href="https://res.cloudinary.com/dzibrzlq9/image/upload/v1740933970/favicon-16x16_fm6lro.png">
+    <!-- 16x16 Favicon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="https://res.cloudinary.com/dzibrzlq9/image/upload/v1740933970/favicon-16x16_fm6lro.png">
 
-<!-- Apple Touch Icon (iOS) -->
-<link rel="apple-touch-icon" sizes="180x180" href="https://res.cloudinary.com/dzibrzlq9/image/upload/v1740933969/apple-touch-icon_trbiqq.png">
+    <!-- Apple Touch Icon (iOS) -->
+    <link rel="apple-touch-icon" sizes="180x180" href="https://res.cloudinary.com/dzibrzlq9/image/upload/v1740933969/apple-touch-icon_trbiqq.png">
 
-<!-- Android Chrome Icons -->
-<link rel="icon" type="image/png" sizes="192x192" href="https://res.cloudinary.com/dzibrzlq9/image/upload/v1740933968/android-chrome-192x192_ovjvkb.png">
-<link rel="icon" type="image/png" sizes="512x512" href="https://res.cloudinary.com/dzibrzlq9/image/upload/v1740933969/android-chrome-512x512_wzcuxb.png">
+    <!-- Android Chrome Icons -->
+    <link rel="icon" type="image/png" sizes="192x192" href="https://res.cloudinary.com/dzibrzlq9/image/upload/v1740933968/android-chrome-192x192_ovjvkb.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="https://res.cloudinary.com/dzibrzlq9/image/upload/v1740933969/android-chrome-512x512_wzcuxb.png">
 
-<!-- Safari Pinned Tab (Optional) -->
-<link rel="mask-icon" href="https://res.cloudinary.com/dzibrzlq9/image/upload/v1740933969/favicon_mnlviv.ico" color="#5bbad5">
-
+    <!-- Safari Pinned Tab (Optional) -->
+    <link rel="mask-icon" href="https://res.cloudinary.com/dzibrzlq9/image/upload/v1740933969/favicon_mnlviv.ico" color="#5bbad5">
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
           rel="stylesheet">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    {% block extra_css %}
+    {% endblock %}
+
 </head>
 <body>
 
@@ -44,7 +47,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="{% url 'landing_page' %}">Home</a></li>                    
+                    <li class="nav-item"><a class="nav-link" href="{% url 'landing_page' %}">Home</a></li>
                     {% if user.is_authenticated %}
                     <li class="nav-item">
                         <a class="nav-link" href="#" onclick="confirmLogout()">Log out</a>
@@ -52,7 +55,7 @@
                             {% csrf_token %}
                         </form>
                     </li>
-                    {% else %}        
+                    {% else %}
                     <li class="nav-item"><a class="nav-link" href="{% url 'signup_page' %}">Login or Register</a></li>
                     {% endif %}
                 </ul>

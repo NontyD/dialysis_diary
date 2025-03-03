@@ -5,11 +5,6 @@ from .models import Post, Comment
 
 @login_required
 def community_page(request):
-    posts = Post.objects.select_related("author").all()  # Fetch posts efficiently
-    return render(request, "community/community.html", {"posts": posts})
-
-@login_required
-def community_page(request):
     if request.method == "POST":
         content = request.POST.get("content").strip()
 

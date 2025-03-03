@@ -1,97 +1,85 @@
-/* Community Page Styling */
-.community-container {
-    max-width: 800px;
-    margin: auto;
+/* Reset some default styles */
+body, h1, h2, h3, p, button {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
 }
 
-/* Flash Messages */
-.alert {
-    border-radius: 8px;
-    padding: 10px 15px;
-    font-size: 14px;
+/* Main container styling */
+body {
+    background-color: #f8f9fa;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
 }
 
-/* Post Submission Card */
-.card {
-    border-radius: 10px;
-    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Post Styling */
-.list-group-item {
-    background: #fff;
-    border-radius: 10px;
-    margin-bottom: 15px;
-    padding: 15px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.list-group-item h5 {
+/* Navigation bar */
+.navbar {
+    width: 100%;
+    background-color: #046b42;
+    padding: 15px 0;
+    text-align: center;
+    color: white;
+    font-size: 24px;
     font-weight: bold;
-    margin-bottom: 5px;
 }
 
-.list-group-item small {
-    color: gray;
-    font-size: 12px;
+/* Community container */
+.community-container {
+    width: 100%;
+    max-width: 800px;
 }
 
-/* Comment Section */
-.list-group {
-    margin-top: 10px;
-}
-
-.list-group-item ul {
-    padding-left: 10px;
-}
-
-.list-group-item li {
-    background: #f9f9f9;
-    border-radius: 6px;
-    padding: 8px;
-    margin-top: 5px;
-}
-
-/* Form Input & Buttons */
-textarea.form-control {
+/* Post card styling */
+.post-card {
+    background: white;
     border-radius: 8px;
-    border: 1px solid #ccc;
+    padding: 15px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+    transition: transform 0.2s ease-in-out;
 }
 
-.input-group .form-control {
-    border-radius: 8px 0 0 8px;
+.post-card:hover {
+    transform: scale(1.02);
 }
 
-.input-group .btn {
-    border-radius: 0 8px 8px 0;
+/* Button styling */
+.button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
 }
 
-/* Buttons */
-.btn-primary {
+.edit-btn {
     background-color: #007bff;
-    border: none;
-    border-radius: 6px;
+    color: white;
 }
 
-.btn-secondary {
-    background-color: #6c757d;
-    border: none;
-    border-radius: 6px;
+.edit-btn:hover {
+    background-color: #0056b3;
 }
 
-.btn-danger {
+.delete-btn {
     background-color: #dc3545;
-    border: none;
-    border-radius: 6px;
+    color: white;
+    margin-left: 10px;
 }
 
-.btn-warning {
-    background-color: #ffc107;
-    border: none;
-    border-radius: 6px;
+.delete-btn:hover {
+    background-color: #a71d2a;
 }
 
-/* Center Dashboard Button */
-.text-center {
-    margin-top: 20px;
+/* Form Styling */
+.post-form {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
 }
