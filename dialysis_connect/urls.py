@@ -3,8 +3,8 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 from django.contrib.auth.views import LogoutView
-from django.conf.urls import handler404, handler500
-from .views import custom_404, custom_500
+from django.conf.urls import handler404, handler500, handler403
+from .views import custom_404, custom_500, custom_403
 from django.shortcuts import render
 
 
@@ -15,8 +15,14 @@ def custom_404(request, exception):
 def custom_500(request):
     return render(request, "500.html", status=500)
 
+
+def custom_403(request):
+    return render(request, "403.html", status=403)
+
+
 handler404 = 'dialysis_connect.views.custom_404'
 handler500 = 'dialysis_connect.views.custom_500'
+handler403 = 'dialysis_connect.views.custom_403'
 
 
 urlpatterns = [
