@@ -6,6 +6,16 @@
 #   * Remove `managed = False` lines if you wish to allow Django to create, modify, and delete the table
 # Feel free to rename the models, but don't rename db_table values or field names.
 from django.db import models
+import cloudinary
+import cloudinary.models
+
+class UploadedImage(models.Model):
+    image = cloudinary.models.CloudinaryField('image')
+    uploaded_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Image {self.id} uploaded at {self.uploaded_at}"
+
 
 
 class AuthGroup(models.Model):

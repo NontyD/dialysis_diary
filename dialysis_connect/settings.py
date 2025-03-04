@@ -60,6 +60,7 @@ INSTALLED_APPS = [
     "rest_framework",
     "cloudinary_storage",
     "cloudinary",
+    "dialysis_connect",
     "pages",
     "users",
     "community",

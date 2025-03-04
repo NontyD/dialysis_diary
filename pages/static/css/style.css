@@ -24,7 +24,7 @@ html, body {
 
 
 nav.custom-navbar {
-    background-color: #004d00 !important; /* Dark green */
+    background-color: #004d00 !important; 
 }
 
 /* Ensure text color is visible */
@@ -39,3 +39,21 @@ nav.custom-navbar {
     font-weight: bold !important;
 }
 
+.hero {
+    background-image: url('https://res.cloudinary.com/dzibrzlq9/image/upload/v1741075934/nephron-7013806_1280_gjgfwv.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 400px;     
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero .container {
+    text-align: center;
+}
+
+.hero .container h1, .hero .container p, .hero .container a {
+    margin-bottom: 1rem;
+} 

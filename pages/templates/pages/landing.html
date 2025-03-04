@@ -3,8 +3,12 @@
 {% block title %}Welcome to Dialysis Connect{% endblock %}
 
 {% block content %}
+
+<!-- Custom CSS -->
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
 <!-- Hero Section -->
-<section class="hero bg-light text-center py-5">
+<section class="hero">
     <div class="container">
         <h1 class="display-4">Welcome to Dialysis Connect!</h1>
         <p class="lead">
@@ -14,10 +18,8 @@
             Most importantly, have your dialysis records at hand anytime you meet your health worker.
         </p>
         <a href="{% url 'dashboard' %}" class="btn btn-success btn-lg">Join the Community</a>
-
     </div>
 </section>
-
 <!-- Learn More Section -->
 <div class="container my-5">
     <h2 class="text-center mb-4">Learn More</h2>
