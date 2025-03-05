@@ -9,3 +9,4 @@ node_modules/
 cloudinary_python.txtcalendar_app/credentials.json
 calendar_app/credentials.json
 calendar_app/credentials.json
+.env
