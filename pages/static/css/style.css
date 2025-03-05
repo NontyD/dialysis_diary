@@ -42,9 +42,10 @@ nav.custom-navbar {
 .hero {
     background-image: url('https://res.cloudinary.com/dzibrzlq9/image/upload/v1741075934/nephron-7013806_1280_gjgfwv.jpg');
     background-size: cover;
+    background-color: rgba(0, 0, 0, 0.3);
     background-position: center;
     height: 400px;     
-    display: flex;
+    display: inline-block;
     flex-direction: column;
     justify-content: center;
     align-items: center;
