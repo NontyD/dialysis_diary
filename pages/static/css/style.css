@@ -40,7 +40,7 @@ nav.custom-navbar {
 }
 
 .hero {
-    background-image: url('https://res.cloudinary.com/dzibrzlq9/image/upload/v1741075934/nephron-7013806_1280_gjgfwv.jpg');
+    background-image: url('https://res.cloudinary.com/dzibrzlq9/image/upload/v1740966715/heroimage_jqjp3v.jpg');
     background-size: cover;
     background-color: rgba(0, 0, 0, 0.3);
     background-position: center;
@@ -57,4 +57,5 @@ nav.custom-navbar {
 
 .hero .container h1, .hero .container p, .hero .container a {
     margin-bottom: 1rem;
+    font-weight: bold !important;
 } 

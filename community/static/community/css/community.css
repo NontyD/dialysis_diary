@@ -15,17 +15,6 @@ body {
     padding: 20px;
 }
 
-/* Navigation bar */
-.navbar {
-    width: 100%;
-    background-color: #046b42;
-    padding: 15px 0;
-    text-align: center;
-    color: white;
-    font-size: 24px;
-    font-weight: bold;
-}
-
 /* Community container */
 .community-container {
     width: 100%;

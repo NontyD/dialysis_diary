@@ -77,5 +77,6 @@
 
 {% block extra_js %}
 {% load static %}
-<script src="{% static 'community/js/community.js' %}"></script>
+<script src="{% get_static_prefix %}community/js/community.js"></script>
+
 {% endblock %}

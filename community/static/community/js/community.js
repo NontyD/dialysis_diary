@@ -1,31 +1,36 @@
 console.log("Javascript loaded!");
 
 document.addEventListener("DOMContentLoaded", function () {
-    // For toggling the post form
+    console.log("JavaScript loaded!");
+
+    // Ensure the post form toggle button exists
     let togglePostFormBtn = document.getElementById("togglePostForm");
     let postForm = document.getElementById("postForm");
 
     if (togglePostFormBtn && postForm) {
         togglePostFormBtn.addEventListener("click", function () {
             postForm.classList.toggle("d-none");
-            console.log("Button clicked! Toggling postForm.");
+            console.log("Toggled post form.");
         });
     } else {
         console.error("Post button or form not found!");
     }
 
-    // For toggling comment forms
+    // Ensure comment buttons exist
     let commentButtons = document.querySelectorAll(".toggleCommentForm");
+
+    if (commentButtons.length === 0) {
+        console.error("No comment buttons found!");
+    }
 
     commentButtons.forEach(function (button) {
         button.addEventListener("click", function () {
-            // Traverse up to the post-item, then find the commentForm within that post
             let postItem = button.closest(".list-group-item");
-            let commentForm = postItem.querySelector(".commentForm");
+            let commentForm = postItem ? postItem.querySelector(".commentForm") : null;
 
             if (commentForm) {
                 commentForm.classList.toggle("d-none");
-                console.log("Comment button clicked! Toggling commentForm.");
+                console.log("Toggled comment form.");
             } else {
                 console.error("Comment form not found!");
             }
