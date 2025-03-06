@@ -1,1 +1,1 @@
-web: gunicorn dialysis_connect.wsgi --log-file-
+web: gunicorn dialysis_connect.wsgi
