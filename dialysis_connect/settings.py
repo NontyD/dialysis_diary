@@ -29,7 +29,7 @@ DEBUG = env.bool("DEBUG", default=False)
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
+ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "127.0.0.1,localhost", ".heroku.com").split(",")
 
 DATABASE_URL = os.getenv("DATABASE_URL")
 
