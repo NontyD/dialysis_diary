@@ -29,7 +29,9 @@ DEBUG = env.bool("DEBUG", default=False)
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "127.0.0.1,localhost", "*").split(",")
+ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "127.0.0.1,localhost") or "*"
+ALLOWED_HOSTS = ALLOWED_HOSTS.split(",") if ALLOWED_HOSTS != "*" else ["*"]
+
 
 DATABASE_URL = os.getenv("DATABASE_URL")
 
