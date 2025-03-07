@@ -4,6 +4,7 @@
 
 {% block extra_css %}
 {% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
 <link rel="stylesheet" href="{% static 'community/css/community.css' %}">
 {% endblock %}
 
@@ -70,7 +71,7 @@
 
     <!-- Back to Dashboard Button -->
     <div class="text-center mt-4">
-        <a href="{% url 'dashboard' %}" class="btn btn-secondary">Back to Dashboard</a>
+        <a href="{% url 'dashboard' %}" class="btn btn-success">Back to Dashboard</a>
     </div>
 </div>
 {% endblock %}
