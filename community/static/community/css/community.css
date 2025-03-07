@@ -1,8 +1,9 @@
 /* Reset some default styles */
-body, h1, h2, h3, p, button {
+body, h1, h2, h3, p, button, label { /* Added label here */
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
+    box-sizing: border-box; /* Added box-sizing */
 }
 
 /* Main container styling */
@@ -22,7 +23,7 @@ body {
 }
 
 /* Post card styling */
-.post-card {
+.post-item { /* Renamed to post-item to match your HTML */
     background: white;
     border-radius: 8px;
     padding: 15px;
@@ -31,12 +32,12 @@ body {
     transition: transform 0.2s ease-in-out;
 }
 
-.post-card:hover {
+.post-item:hover { /* Renamed to post-item */
     transform: scale(1.02);
 }
 
 /* Button styling */
-.button {
+.btn { /* General button styling */
     padding: 10px 15px;
     border: none;
     border-radius: 5px;
@@ -45,30 +46,69 @@ body {
     transition: background-color 0.3s;
 }
 
-.edit-btn {
+.btn-primary { /* Primary button styling */
     background-color: #007bff;
     color: white;
 }
 
-.edit-btn:hover {
+.btn-primary:hover {
     background-color: #0056b3;
 }
 
-.delete-btn {
-    background-color: #dc3545;
-    color: white;
-    margin-left: 10px;
+.btn-warning { /* Edit button styling */
+    background-color: #ffc107;
+    color: #212529;
 }
 
-.delete-btn:hover {
-    background-color: #a71d2a;
+.btn-warning:hover {
+    background-color: #e0a800;
+}
+
+.btn-danger { /* Delete button styling */
+    background-color: #dc3545;
+    color: white;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
 }
 
 /* Form Styling */
-.post-form {
+.card { /* General card styling */
     background: white;
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
+}
+
+/* Initially hide the post form */
+#postForm {
+    display: none;
+}
+
+/* When the checkbox is checked, display the post form */
+#togglePostFormCheckbox:checked + label + #postForm {
+    display: block;
+}
+/* Existing CSS (from previous response) */
+
+
+#postForm {
+    display: none;
+}
+
+/* When the checkbox is checked, display the post form */
+#togglePostFormCheckbox:checked + label + #postForm {
+    display: block;
+}
+
+/* Initially hide comment forms */
+.commentForm {
+    display: none;
+}
+
+/* Show comment form when corresponding checkbox is checked */
+[id^="toggleCommentForm-"]:checked + label + .commentForm {
+    display: block;
 }

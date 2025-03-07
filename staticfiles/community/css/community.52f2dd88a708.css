@@ -91,24 +91,3 @@ body {
 #togglePostFormCheckbox:checked + label + #postForm {
     display: block;
 }
-/* Existing CSS (from previous response) */
-
-
-#postForm {
-    display: none;
-}
-
-/* When the checkbox is checked, display the post form */
-#togglePostFormCheckbox:checked + label + #postForm {
-    display: block;
-}
-
-/* Initially hide comment forms */
-.commentForm {
-    display: none;
-}
-
-/* Show comment form when corresponding checkbox is checked */
-[id^="toggleCommentForm-"]:checked + label + .commentForm {
-    display: block;
-}

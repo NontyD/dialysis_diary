@@ -36,7 +36,6 @@ ALLOWED_HOSTS = [
 ]
 
 
-
 DATABASE_URL = os.getenv("DATABASE_URL")
 
 if DATABASE_URL:

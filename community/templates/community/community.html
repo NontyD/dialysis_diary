@@ -9,13 +9,12 @@
 
 {% block content %}
 <div class="container community-container">
-    <!-- Share Experience Button -->
-    <div class="text-center mb-3">
-        <button type="button" id="togglePostForm" class="btn btn-primary">Share Your Experience</button>
-    </div>
-
-    <!-- Hidden Post Form -->
-    <div id="postForm" class="card mb-4 d-none">
+    <!-- Share Experience Toggle -->
+    <input type="checkbox" id="togglePostFormCheckbox" style="display: none;">
+    <label for="togglePostFormCheckbox" class="btn btn-primary text-center mb-3">
+        Share Your Experience
+    </label>
+    <div id="postForm" class="card mb-4">
         <div class="card-body">
             <h5 class="card-title">Share Your Experience</h5>
             <form method="POST">
@@ -38,13 +37,14 @@
         <a href="{% url 'delete_post' post.id %}" class="btn btn-sm btn-danger">Delete</a>
         {% endif %}
 
-        <!-- Comment Toggle Button -->
-        <button type="button" class="btn btn-outline-secondary btn-sm toggleCommentForm mt-2">
+        <!-- Comment Toggle -->
+        <input type="checkbox" id="toggleCommentForm-{{ post.id }}" style="display: none;">
+        <label for="toggleCommentForm-{{ post.id }}" class="btn btn-outline-secondary btn-sm mt-2">
             Comment
-        </button>
+        </label>
 
         <!-- Hidden Comment Form -->
-        <form method="POST" action="{% url 'add_comment' post.id %}" class="commentForm mt-2 d-none">
+        <form method="POST" action="{% url 'add_comment' post.id %}" class="commentForm mt-2">
             {% csrf_token %}
             <div class="input-group">
                 <input type="text" name="content" class="form-control" placeholder="Write a comment..." required>
@@ -76,7 +76,5 @@
 {% endblock %}
 
 {% block extra_js %}
-{% load static %}
-<script src="{% get_static_prefix %}community/js/community.js"></script>
-
+    {#  No javascript #}
 {% endblock %}
