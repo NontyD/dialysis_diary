@@ -278,15 +278,14 @@ The ERD (Entity Relationship Diagram) was designed on [dbdiagram.io](https://dbd
 - Git: Used commands such as `git` `add` - `commit -m "message'` - `push`.
 - VS code: Used as my IDE.
 - Github: Used as the code hosting.
-- [Font awesome](https://fontawesome.com/): Used for a variety of icons through the pages.
 - [Favicon io](https://favicon.io/favicon-converter/): Used to generate the faveicon.
 - [Balsamiq](https://balsamiq.com/wireframes/desktop/): Used to create the wireframes - desktop version.
-- [TinyPNG](https://tinypng.com/): Used to compress each image used in the project for optimal load times.
+- [Cloudinary](https://cloudinary.com/): Used to host all my images.
 - [dbdiagraim.io](https://dbdiagram.io/home): Used to create the ERD.
-- [GSAP](https://gsap.com/): Used for the animations on the 404 page.
 
 ## Migration from Gitpod to VS code
 
+I initially started my project using Gitpod but later needed to migrate to VS Code. During the migration process, I encountered several challenges that made it difficult to seamlessly transfer the project. As a result, I ultimately decided to set up a fresh environment in VS Code and manually copy my existing code from Gitpod to ensure a smooth transition.
 
 ## Fixed bugs
 
