@@ -7,7 +7,7 @@
 [![GitHub repo size](https://img.shields.io/github/repo-size/NontyD/dialysis_diary)](https://github.com/NontyD/dialysis_diary)
 
 
-![Responsiveness](images_documentation/lighthouse_scores/responsive.png)
+![Home](https://res.cloudinary.com/dzibrzlq9/image/upload/v1741395866/website_jigf7b.png)
 
 ## Dialysis Connect is a web-based platform designed to support individuals undergoing dialysis treatment by providing essential tools to manage their medical journey effectively. The platform aims to foster a supportive community, streamline record-keeping, and offer accessible features that enhance the overall patient experience. It serves as a comprehensive solution for dialysis patients to log their health records, schedule important events, share experiences, and store medical documents securely.
 
@@ -161,6 +161,103 @@
 
 
 ### Features
+
+#### Home
+![Home](https://res.cloudinary.com/dzibrzlq9/image/upload/v1741395818/home_p6pzlp.png)
+
+The Home page serves as the entry point for Dialysis Connect. It provides an introduction to the platform and a user-friendly interface to navigate different features. The page includes a welcome message, links to the Irish Kidney Association (IKA) for educational resources, and a navigation bar for seamless movement between sections.
+
+#### Sign Up & Login
+<p align="center">
+  <img src="https://res.cloudinary.com/dzibrzlq9/image/upload/v1741395847/signup_lmimdx.png" width="45%">
+  <img src="https://res.cloudinary.com/dzibrzlq9/image/upload/v1741395833/login_slbfps.png" width="45%">
+</p>
+
+
+Users must create an account to access the platform’s features.
+
+    - Sign Up: New users can register by providing their details, such as email and password.
+    - Login: Registered users can securely log in using their credentials.
+    - User authentication ensures privacy and security while managing personal health information.
+
+#### Dashboard
+![Dashboard](https://res.cloudinary.com/dzibrzlq9/image/upload/v1741209614/dashboard_bcciea.png)
+
+After logging in, users are directed to the Dashboard, which provides an overview of the platform. The dashboard contains four main sections, each represented as a card:
+
+    Community – Users can find support and share experiences.
+    Records – Provides access to dialysis records and logs.
+    Calendar – Displays appointments and reminders.
+    Upload Documents – Allows users to store important medical documents.
+
+The dashboard offers a simple, clean interface for users to quickly access the most relevant features.
+
+#### Community
+![Community](https://res.cloudinary.com/dzibrzlq9/image/upload/v1741209614/community_hkjab1.png)
+
+The Community section is a discussion space where users can share their experiences and seek support.
+
+    Users can create and submit posts.
+    Posts display the author, timestamp, and content.
+    Posts are shown in reverse chronological order (newest first).
+    Logged-in users can edit or delete their own posts.
+    Empty posts are not allowed, ensuring meaningful discussions.
+
+This section fosters a supportive environment for patients undergoing dialysis and their caregivers.
+
+#### Dialysis Records
+<p align="center">
+  <img src="https://res.cloudinary.com/dzibrzlq9/image/upload/v1741209614/add-records_qt41bx.png" width="45%">
+  <img src="https://res.cloudinary.com/dzibrzlq9/image/upload/v1741209615/records_hok3qg.png" width="45%">
+</p>
+
+The Records section acts as a dialysis diary, allowing users to log daily treatment details. Users can input:
+
+    Weight before Dialysis (kg)
+    Blood Pressure (systolic & diastolic)
+    Initial Drain Volume (ml)
+    Total UF (ml)
+    Average Dwell (hh:mm)
+    Lost Dwell (hh:mm)
+    Added Dwell (hh:mm)
+    Weight after Dialysis (kg)
+    Comments for additional notes.
+
+Users can retrieve and review past records, this helps users track treatment trends and communicate effectively with healthcare providers.
+
+#### Calendar
+![Calendar](https://res.cloudinary.com/dzibrzlq9/image/upload/v1741209615/calendar_ylqemj.png)
+
+The Calendar feature enables users to manage their hospital appointments and reminders.
+
+    - Users can add events with a title, date, and description.
+    - The calendar is displayed in a monthly view, along with a list of upcoming events.
+    - Events can be edited or deleted as needed.
+    
+This feature ensures that users stay on top of their medical schedule and dialysis routine.
+
+#### File Upload
+<p align="center">
+  <img src="https://res.cloudinary.com/dzibrzlq9/image/upload/v1741209615/upload_kn12dn.png" width="45%">
+  <img src="https://res.cloudinary.com/dzibrzlq9/image/upload/v1741209615/files_diq2cy.png" width="45%">
+</p>
+
+Users can upload and store important documents such as prescriptions, medical reports, and test results.
+
+    - Supports PDFs and images for convenience.
+    - Users can name each uploaded file for easy identification.
+    - Uploaded files remain accessible for future reference.
+
+This feature acts as a digital medical file cabinet, allowing users to keep important records in one place.
+
+#### Navigation Bar
+![Nav bar - user not logged in](https://res.cloudinary.com/dzibrzlq9/image/upload/v1741396439/nav-loogout_z5tz1a.png)
+![Nav bar - user logged in](https://res.cloudinary.com/dzibrzlq9/image/upload/v1741396438/nav-login_oss0gk.png)
+
+The Navigation Bar provides easy access to all sections of the platform.
+
+    - Available on all pages, allowing users to switch between features without hassle.
+    - Contains links to Community, Records, Calendar, Upload Documents, and Dashboard.
 
 
 ### Wireframes
