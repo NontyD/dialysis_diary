@@ -307,6 +307,39 @@ The database comprises of 6 tables:
 The ERD (Entity Relationship Diagram) was designed on [dbdiagram.io](https://dbdiagram.io/d/DialysisConnect-67c39901263d6cf9a0e91d6d)
 
   
+### Technology used
+
+| Category       | Technology & Version                                           | Other Dependencies                |
+| -------------- | -------------------------------------------------------------- | --------------------------------- |
+| Backend        | Django 4.2.19 (Django==4.2.19)                                 |                                   |
+| API            | Django REST Framework (djangorestframework==3.15.2)            | asgiref==3.8.1                    |
+| Database       | PostgreSQL (psycopg2==2.9.10)                                  | dj-database-url==0.5.0            |
+| Authentication | OAuth (oauthlib==3.2.2)                                        | django-environ==0.12.0            |
+| Frontend       | JavaScript, JSON, HTML5, CSS3                                  | google-api-python-client==2.161.0 |
+| Styling        | Bootstrap                                                      | google-auth-httplib2==0.2.0       |
+| Media Storage  | Cloudinary (cloudinary==1.36.0, dj3-cloudinary-storage==0.0.6) | google-auth-oauthlib==1.2.1       |
+| Static Files   | Whitenoise (whitenoise==6.9.0)                                 | googleapis-common-protos==1.67.0  |
+| Server         | Gunicorn (gunicorn==20.1.0)                                    | httplib2==0.22.0                  |
+| Image Handling | Cloudinary (cloudinary==1.36.0)                                | idna==3.10                        |
+|                |                                                                | packaging==24.2                   |
+|                |                                                                | proto-plus==1.26.0                |
+|                |                                                                | protobuf==5.29.3                  |
+|                |                                                                | psycopg2-binary==2.9.10           |
+|                |                                                                | pyasn1==0.6.1                     |
+|                |                                                                | pyasn1_modules==0.4.1             |
+|                |                                                                | pyparsing==3.2.1                  |
+|                |                                                                | pytz==2025.1                      |
+|                |                                                                | requests==2.32.3                  |
+|                |                                                                | requests-oauthlib==2.0.0          |
+|                |                                                                | rsa==4.9                          |
+|                |                                                                | setuptools==75.8.0                |
+|                |                                                                | six==1.17.0                       |
+|                |                                                                | sqlparse==0.5.3                   |
+|                |                                                                | typing_extensions==4.12.2         |
+|                |                                                                | tzdata==2025.1                    |
+|                |                                                                | uritemplate==4.1.1                |
+|                |                                                                | urllib3==1.26.20                  |
+
 
 ### Tools used
 
