@@ -266,6 +266,41 @@ The Navigation Bar provides easy access to all sections of the platform.
 
 ### Database design
 
+The Dialysis Connect database is designed to support a community-driven platform for dialysis patients. It facilitates event management, user-generated posts and comments, document uploads, and dialysis records tracking. This database follows a relational structure to ensure data consistency, integrity, and efficient querying.
+
+The database comprises of 6 tables:
+- Users Table (users) - This table stores user information and serves as the primary reference for other tables.
+- Events Table (events) - This table stores event details, allowing users to track appointments and reminders.
+- Posts Table (posts) - This table manages user-generated posts within the community section.
+- Comments Table (comments) - This table stores comments on posts, facilitating discussions.
+- Dialysis Records Table (dialysis_records) - This table stores user-submitted dialysis records to help track health data over time.
+- Uploaded Files Table (uploaded_files) - This table allows users to upload and manage medical documents and images.
+
+#### Relationships
+
+- **Users & Events:** One-to-many (a user can have multiple events).
+
+- **Users & Posts:** One-to-many (a user can create multiple posts).
+
+- **Users & Comments:** One-to-many (a user can comment on multiple posts).
+
+- **Users & Dialysis Records:** One-to-many (each user maintains multiple dialysis records).
+
+- **Users & Uploaded Files:** One-to-many (users can upload multiple files).
+
+- **Posts & Comments:** One-to-many (each post can have multiple comments).
+
+#### Design considerations
+
+- **Data Integrity:** Foreign key constraints ensure data consistency.
+
+- **Scalability:** Optimized indexing and proper normalization support future growth.
+
+- **Security:** User authentication should be handled securely to restrict data access.
+
+- **Performance:** Time-based indexing on created_at fields optimizes querying.
+
+
 ![ERD](https://res.cloudinary.com/dzibrzlq9/image/upload/v1740884780/DialysisConnect_gauzuh.png)
 
 
