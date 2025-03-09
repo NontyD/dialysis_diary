@@ -16,10 +16,10 @@
 | **Delete calendar event**       | Users should be able to delete only their own calendar events.                                                                                 | Log in, delete one of your events, and confirm it is removed. Try deleting another user’s event.                                   | ✅       |
 | **Upload document**             | Users should be able to upload PDFs, PNGs, and JPEGs (max size: 5MB) only when logged in.                                                      | Log in, try uploading valid and invalid files (e.g., unsupported formats, large files). Check if files are stored and retrievable. | ✅      |
 
-![Login/Register Demo](https://res.cloudinary.com/dzibrzlq9/video/upload/v1741480973/login-register_o4o73r.mp4)
+![Login/Register Demo](https://res.cloudinary.com/dzibrzlq9/image/upload/v1741481433/login-register_ic4imh.gif)
 
 ![Community Demo](https://res.cloudinary.com/dzibrzlq9/image/upload/v1741479957/community_szratg.gif)
 
-![Records Demo](https://res.cloudinary.com/dzibrzlq9/video/upload/v1741480974/recordss_pcbrkw.mp4)
+![Records Demo](https://res.cloudinary.com/dzibrzlq9/image/upload/v1741481435/recordss_ja4fid.gif)
 
-![Uploads Demo](https://res.cloudinary.com/dzibrzlq9/video/upload/v1741480973/uploads_gjtyr0.mp4)
+![Uploads Demo](https://res.cloudinary.com/dzibrzlq9/image/upload/v1741481434/uploads_mmcmgj.gif)
