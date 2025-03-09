@@ -4,6 +4,8 @@ from django.contrib import messages
 from .models import DialysisRecord
 from .forms import DialysisRecordForm
 from datetime import datetime, timedelta
+from django.utils import timezone
+from django.utils.timezone import now
 
 @login_required
 def add_record(request):
@@ -28,12 +30,13 @@ def add_record(request):
     return render(request, "records/add_record.html", {"form": form})
 @login_required
 def records_list(request):
-    """Display past dialysis records for the logged-in user."""
-    records = DialysisRecord.objects.filter(user=request.user).order_by("-date")    
+    """Display past dialysis records for the logged-in user (last 7 days)."""
+    today = timezone.now().date()
+    last_week = today - timedelta(days=7)
 
+    records = DialysisRecord.objects.filter(user=request.user, date__gte=last_week).order_by("-date")
 
     return render(request, "records/records_list.html", {"records": records})
-
 
 @login_required
 def records_summary(request, period):

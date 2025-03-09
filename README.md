@@ -370,22 +370,43 @@ For a detailed overview of both manual and automated testing processes, please r
 
 ## Deployment
 
-### via Heroku
+### Heroku
 
-1. Navigate to [heroku](https://www.heroku.com/home) and create an account.
-2. Click `Create new app`, enter the app name and choose your region, hit `create app`.
-3. Click **Deploy** and in the _Deployment method_ option choose **Github**. Enter the repository's name and click connect, you can leave the branch deployment to `main`.
-   > You need to have created your github repository.
-4. Head to **Settings** and click `Reveal config vars`
-5. On the KEY inputs add: DATABASE_URL - SECRET_KEY - CLOUDINARY_URL. On the VALUE inputs add your own, for each one.
-6. Click **Add buildpack** and choose `python`.
-7. Now you're set. Go back to `Deploy` and click **Deploy branch**.
+The Application has been deployed from GitHub to Heroku by following the steps:
+
+1. Create or log in to your account at heroku.com
+2. Create a new app, add a unique app name ( for this project, the name is travellingplanner) and then choose your region
+3. Click on create app
+4. Go to "Settings"
+5. Under Config Vars add the private API key information using key 'CRED' and into the value area copy the API key information added to the .json file.  Also add a key 'PORT' and value '8000'.
+6. Add required buildpacks (further dependencies). For this project, set it up so Python will be on top and Node.js on bottom
+7. Go to "Deploy" and select "GitHub" in "Deployment method"
+8. To connect Heroku app to your Github repository code enter your repository name, click 'Search' and then 'Connect' when it shows below.
+9.  Choose the branch you want to build your app from
+10. If preferred, click on "Enable Automatic Deploys", which keeps the app up to date with your GitHub repository
+11. Wait for the app to build. Once ready you will see the “App was successfully deployed” message and a 'View' button to take you to your deployed link.
+
+### Local Development
+
+#### How to Fork
+
+To fork the repository:
+
+1. Log in (or sign up) to Github.
+2. Find the repository you want to fork by either searching for it using the search bar or by directly navigating to its URL.
+3. Once you're on the repository's main page, locate the "Fork" button in the upper-right corner of the page, usually next to the "Star" button.
+4. Click on the "Fork" button.
+
+#### How to Clone
+
+To clone the repository:
+
+* Click on the "Code" button in your forked repository.
+* Copy the repository URL (HTTPS, SSH, or GitHub CLI).
+* Open a terminal (or command prompt) on your computer.
+* Run the following command: git clone <github.com/nontyd/dialysis_diary>
 
 
-### Via Forking
-
-1. Click the **Fork** button at the top right of the repository page.
-2. This will create a copy of the repository in your own GitHub account, which you can modify independently.
 
 ## Credits
 
@@ -396,4 +417,5 @@ The main idea for this project was obtained by the [Django Blog](https://www.you
 
 ### Media
 
-All photos used in the project - including favicon - were taken from [Pexels](https://www.pexels.com/) / [Unsplash](https://unsplash.com/) / [Freepik](https://www.freepik.com/).
+Hero image used in the project was taken from [Freepik](https://www.freepik.com/).
+Favicon was generated from [Design.com](https://www.design.com/logo-maker)

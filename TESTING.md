@@ -23,3 +23,5 @@
 ![Records Demo](https://res.cloudinary.com/dzibrzlq9/image/upload/v1741481435/recordss_ja4fid.gif)
 
 ![Uploads Demo](https://res.cloudinary.com/dzibrzlq9/image/upload/v1741481434/uploads_mmcmgj.gif)
+
+![Calendar demo](https://res.cloudinary.com/dzibrzlq9/image/upload/v1741528804/calendarr_upqyek.gif)
