@@ -152,9 +152,13 @@
 
 ## User Experience
 
-### Typography & Color scheme
+### Patient-Centered Approach
 
+The design of Dialysis Connect is based on firsthand experience as a dialysis patient, focusing on features that are most relevant and beneficial. Informal feedback was gathered from fellow patients during hospital visits, providing valuable insights into usability and functionality.
 
+### Color Scheme & Imagery
+
+The Dialysis Connect website employs a minimalist and calming color palette to ensure a non-distracting and informative experience. The overall design approach ensures that Dialysis Connect remains an informative and functional platform, where content is the focal point, and aesthetics serve to support usability rather than overshadow it.
 
 ### Agile Planning
 

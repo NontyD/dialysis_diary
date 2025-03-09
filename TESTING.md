@@ -15,3 +15,8 @@
 | **Edit calendar event**         | Users should be able to edit only their own calendar events.                                                                                   | Log in, attempt to edit an event you created, and check if the changes are saved. Try editing another user’s event.                | ✅       |
 | **Delete calendar event**       | Users should be able to delete only their own calendar events.                                                                                 | Log in, delete one of your events, and confirm it is removed. Try deleting another user’s event.                                   | ✅       |
 | **Upload document**             | Users should be able to upload PDFs, PNGs, and JPEGs (max size: 5MB) only when logged in.                                                      | Log in, try uploading valid and invalid files (e.g., unsupported formats, large files). Check if files are stored and retrievable. | ✅      |
+
+![Login/Register Demo](https://res.cloudinary.com/dzibrzlq9/video/upload/v1741479979/login-register_jcr4kz.mov)
+![Community Demo](https://res.cloudinary.com/dzibrzlq9/image/upload/v1741479957/community_szratg.gif)
+![Records Demo](https://res.cloudinary.com/dzibrzlq9/video/upload/v1741479957/recordss_jnakc2.mov)
+![Uploads Demo](https://res.cloudinary.com/dzibrzlq9/video/upload/v1741479956/uploads_gh2gxt.mov)
