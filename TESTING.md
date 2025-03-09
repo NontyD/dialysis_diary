@@ -18,7 +18,7 @@
 
 ![Login/Register Demo](https://res.cloudinary.com/dzibrzlq9/image/upload/v1741481433/login-register_ic4imh.gif)
 
-![Community Demo](https://res.cloudinary.com/dzibrzlq9/image/upload/v1741479957/community_szratg.gif)
+![Community Demo](https://res.cloudinary.com/dzibrzlq9/image/upload/v1741482079/community_1_lxiphb.gif)
 
 ![Records Demo](https://res.cloudinary.com/dzibrzlq9/image/upload/v1741481435/recordss_ja4fid.gif)
 

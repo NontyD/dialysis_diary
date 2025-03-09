@@ -354,6 +354,7 @@ The ERD (Entity Relationship Diagram) was designed on [dbdiagram.io](https://dbd
 - [Balsamiq](https://balsamiq.com/wireframes/desktop/): Used to create the wireframes - desktop version.
 - [Cloudinary](https://cloudinary.com/): Used to host all my images.
 - [dbdiagraim.io](https://dbdiagram.io/home): Used to create the ERD.
+- [cloudconvert](https://cloudconvert.com/mp4-to-gif): Used to convert video to gif
 
 ## Migration from Gitpod to VS code
 
