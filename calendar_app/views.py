@@ -63,39 +63,21 @@ def add_event(request):
 
 @csrf_exempt
 @login_required
+
 def update_event(request, event_id):
-    """Update event details."""
-    event = get_object_or_404(Event, id=event_id, user=request.user)
-    
     if request.method == "POST":
+        event = Event.objects.get(id=event_id)
+
         try:
+            # Parse JSON data correctly
             data = json.loads(request.body)
-            
-            # Convert string dates to datetime
-            from django.utils.timezone import make_aware
-            from django.utils.dateparse import parse_datetime
-            from django.conf import settings
-            import pytz
-            
-            timezone = pytz.timezone(settings.TIME_ZONE)
-
-            if "start" in data:
-                start = parse_datetime(data["start"])
-                if start:
-                    event.start = make_aware(start, timezone) if start.tzinfo is None else start
-
-            if "end" in data:
-                end = parse_datetime(data["end"])
-                if end:
-                    event.end = make_aware(end, timezone) if end.tzinfo is None else end
-
+            event.title = data.get("title", event.title)
             event.save()
-            return JsonResponse({"message": "Event updated"})
-        
-        except Exception as e:
-            return JsonResponse({"error": str(e)}, status=400)
+            return JsonResponse({"message": "Event updated"}, status=200)
+        except json.JSONDecodeError:
+            return JsonResponse({"error": "Invalid JSON data"}, status=400)
 
-    return JsonResponse({"error": "Invalid request"}, status=400)
+    return JsonResponse({"error": "Invalid request method"}, status=405)
 
 
 @csrf_exempt

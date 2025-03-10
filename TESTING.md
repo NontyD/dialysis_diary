@@ -16,12 +16,35 @@
 | **Delete calendar event**       | Users should be able to delete only their own calendar events.                                                                                 | Log in, delete one of your events, and confirm it is removed. Try deleting another user’s event.                                   | ✅       |
 | **Upload document**             | Users should be able to upload PDFs, PNGs, and JPEGs (max size: 5MB) only when logged in.                                                      | Log in, try uploading valid and invalid files (e.g., unsupported formats, large files). Check if files are stored and retrievable. | ✅      |
 
+### Login and Register
 ![Login/Register Demo](https://res.cloudinary.com/dzibrzlq9/image/upload/v1741481433/login-register_ic4imh.gif)
 
+### Community
 ![Community Demo](https://res.cloudinary.com/dzibrzlq9/image/upload/v1741482079/community_1_lxiphb.gif)
 
+### Records
 ![Records Demo](https://res.cloudinary.com/dzibrzlq9/image/upload/v1741481435/recordss_ja4fid.gif)
 
+### Uploads
 ![Uploads Demo](https://res.cloudinary.com/dzibrzlq9/image/upload/v1741481434/uploads_mmcmgj.gif)
 
+### Calendar
 ![Calendar demo](https://res.cloudinary.com/dzibrzlq9/image/upload/v1741528804/calendarr_upqyek.gif)
+
+
+## Unit Tests
+
+### Users - Login and Sign up
+![Users Tests](https://res.cloudinary.com/dzibrzlq9/image/upload/v1741623554/users_test_xxcsoc.png)
+
+### Community
+![Community Tests](https://res.cloudinary.com/dzibrzlq9/image/upload/v1741623491/community_test_hxi2dl.png)
+
+### Calendar
+![Calendar Tests](https://res.cloudinary.com/dzibrzlq9/image/upload/v1741623476/calendar_test_nzukcs.png)
+
+### Records
+![Records Tests](https://res.cloudinary.com/dzibrzlq9/image/upload/v1741623508/records_test_mptfv7.png)
+
+### Uploads
+![Uploads Tests](https://res.cloudinary.com/dzibrzlq9/image/upload/v1741623530/uploads_test_jywzk9.png)
