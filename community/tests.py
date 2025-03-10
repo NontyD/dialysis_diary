@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 from .models import Post, Comment
 from django.contrib import messages
 
+
 class CommunityTests(TestCase):
     def setUp(self):
         # Create a test user
