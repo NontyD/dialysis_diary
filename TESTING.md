@@ -1,3 +1,19 @@
+# Testing documentation
+
+[Manual Testing](#manual-testing)
+
+[Automated Testing](#automated-testing)
+
+- [Django Unit Tests](#django-unit-tests)
+- [HTML Validation Tests](#html-validation-tests)
+- [CSS Validation Tests](#css-validation-tests)
+- [Javascript Validation Tests](#javascript-validation-tests)
+- [Python Validation Tests](#python-validation-tests)
+- [Lighthouse Scores](#lighthouse-scores)
+- [Browser Compatibility](#browser-compatibility)
+- [Accessibility](#Accessibility)
+- [Responsiveness](#Responsiveness)
+
 ## Manual Testing
 
 | **Feature**                     | **Expectation**                                                                                                                                | **Test**                                                                                                                           | **Result** |
@@ -31,8 +47,9 @@
 ### Calendar
 ![Calendar demo](https://res.cloudinary.com/dzibrzlq9/image/upload/v1741528804/calendarr_upqyek.gif)
 
+## Automated Testing
 
-## Unit Tests
+## Djang Unit Tests
 
 ### Users - Login and Sign up
 ![Users Tests](https://res.cloudinary.com/dzibrzlq9/image/upload/v1741623554/users_test_xxcsoc.png)
@@ -48,3 +65,35 @@
 
 ### Uploads
 ![Uploads Tests](https://res.cloudinary.com/dzibrzlq9/image/upload/v1741623530/uploads_test_jywzk9.png)
+
+## HTML Validation Tests
+
+- **HTML Validation**: Used the [W3C HTML Validator](https://validator.w3.org/) which returned the following results:
+
+## CSS Validation Tests
+
+- **CSS Validation**: Used the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) which returned the following results:
+
+## Javascript Validation Tests
+
+- **JavaScript Validation**: Used [JSHint](https://jshint.com/) to validate JavaScript code
+
+## Python Validation Tests
+
+- **Python Validation**: Used [CI Python Linter](https://pep8ci.herokuapp.com/) to validate Python code
+
+## Lighthouse Scores
+
+- **Lighthouse Scores**: Used [Lighthouse Metrics](https://lighthouse-metrics.com/) to measure the scores
+
+## Browser Compatibility
+
+- **Lighthouse Scores**: Used [Lighthouse Metrics](https://lighthouse-metrics.com/)
+
+## Accessibility
+
+- **Accessibility**: Used [WAVE](https://wave.webaim.org/)
+
+## Responsiveness
+
+- **Responsiveness**: Used [Am I responsive](https://ui.dev/amiresponsive). I had to download Ignore X-frames extesion to be able to use the test. However, I could only manage to test the home page and login page as there was a security warning when I logged in.
