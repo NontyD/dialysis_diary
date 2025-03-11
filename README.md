@@ -266,7 +266,35 @@ The Navigation Bar provides easy access to all sections of the platform.
 
 ### Wireframes
 
+#### Home and Dashboard
+<p align="center">
+  <img src="https://res.cloudinary.com/dzibrzlq9/image/upload/v1741657095/wireframe_home_qojpwl.png" width="45%">
+  <img src="https://res.cloudinary.com/dzibrzlq9/image/upload/v1741657094/wireframe_dashboard_ab2mdl.png" width="45%">
+</p>
 
+#### Sign up and Login
+<p align="center">
+  <img src="https://res.cloudinary.com/dzibrzlq9/image/upload/v1741657095/wireframe_signup_czdfhp.png" width="45%">
+  <img src="https://res.cloudinary.com/dzibrzlq9/image/upload/v1741657095/wireframe_login_yiyf8p.png" width="45%">
+</p>
+
+#### Community and Calendar
+<p align="center">
+  <img src="https://res.cloudinary.com/dzibrzlq9/image/upload/v1741657094/wireframe_community_qbfy4i.png" width="45%">
+  <img src="https://res.cloudinary.com/dzibrzlq9/image/upload/v1741657094/wireframe_calendar_tanpo9.png" width="45%">
+</p>
+
+#### File uploads and Uploaded files
+<p align="center">
+  <img src="https://res.cloudinary.com/dzibrzlq9/image/upload/v1741657095/wireframe_uploads_d95ehm.png" width="45%">
+  <img src="https://res.cloudinary.com/dzibrzlq9/image/upload/v1741657094/wireframe_files_n2ra6d.png" width="45%">
+</p>
+
+#### Dialysis Records
+<p align="center">
+  <img src="https://res.cloudinary.com/dzibrzlq9/image/upload/v1741657095/wireframe_record_tbnapa.png" width="45%">
+  
+</p>
 
 ### Database design
 
