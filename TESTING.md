@@ -78,6 +78,8 @@
 
 - **JavaScript Validation**: Used [JSHint](https://jshint.com/) to validate JavaScript code
 
+![calendar.js](https://res.cloudinary.com/dzibrzlq9/image/upload/v1741719302/jshint_cragmi.png)
+
 ## Python Validation Tests
 
 - **Python Validation**: Used [CI Python Linter](https://pep8ci.herokuapp.com/) to validate Python code

@@ -2,12 +2,17 @@
 # You'll have to do the following manually to clean this up:
 #   * Rearrange models' order
 #   * Make sure each model has one field with primary_key=True
-#   * Make sure each ForeignKey and OneToOneField has `on_delete` set to the desired behavior
-#   * Remove `managed = False` lines if you wish to allow Django to create, modify, and delete the table
-# Feel free to rename the models, but don't rename db_table values or field names.
+#   * Make sure each ForeignKey and OneToOneField has `on_delete` set
+#     to the desired behavior
+#   * Remove `managed = False` lines if you wish to allow Django to
+#     create, modify, and delete the table
+# Feel free to rename the models, but don't rename db_table values or
+# field names.
+
 from django.db import models
 import cloudinary
 import cloudinary.models
+
 
 class UploadedImage(models.Model):
     image = cloudinary.models.CloudinaryField('image')
@@ -15,7 +20,6 @@ class UploadedImage(models.Model):
 
     def __str__(self):
         return f"Image {self.id} uploaded at {self.uploaded_at}"
-
 
 
 class AuthGroup(models.Model):
@@ -104,7 +108,9 @@ class DjangoAdminLog(models.Model):
     object_repr = models.CharField(max_length=200)
     action_flag = models.SmallIntegerField()
     change_message = models.TextField()
-    content_type = models.ForeignKey('DjangoContentType', models.DO_NOTHING, blank=True, null=True)
+    content_type = models.ForeignKey(
+        'DjangoContentType', models.DO_NOTHING, blank=True, null=True
+    )
     user = models.ForeignKey(AuthUser, models.DO_NOTHING)
 
     class Meta:

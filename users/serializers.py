@@ -1,8 +1,11 @@
 from django.contrib.auth.models import User
 from rest_framework import serializers
 
+
 class UserSerializer(serializers.ModelSerializer):
-    password = serializers.CharField(write_only=True, min_length=8)
+    password = serializers.CharField(
+        write_only=True, min_length=8
+    )
 
     class Meta:
         model = User
@@ -10,7 +13,9 @@ class UserSerializer(serializers.ModelSerializer):
 
     def validate_email(self, value):
         if User.objects.filter(email=value).exists():
-            raise serializers.ValidationError("This email is already registered.")
+            raise serializers.ValidationError(
+                "This email is already registered."
+            )
         return value
 
     def create(self, validated_data):

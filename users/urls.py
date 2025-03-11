@@ -2,7 +2,7 @@ from django.urls import path
 from .views import (
     register_user, signup_page, login_page,
     account_settings, delete_account, dashboard,
-    logout_view  
+    logout_view
 )
 
 
