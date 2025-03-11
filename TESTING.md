@@ -97,3 +97,9 @@
 ## Responsiveness
 
 - **Responsiveness**: Used [Am I responsive](https://ui.dev/amiresponsive). I had to download Ignore X-frames extesion to be able to use the test. However, I could only manage to test the home page and login page as there was a security warning when I logged in.
+
+![Responsiveness](https://res.cloudinary.com/dzibrzlq9/image/upload/v1741716797/responsive_home_qv2vst.png)
+
+![Responsiveness](https://res.cloudinary.com/dzibrzlq9/image/upload/v1741716797/responsive_login_fdmh3o.png)
+
+![Responsiveness](https://res.cloudinary.com/dzibrzlq9/image/upload/v1741716797/responsive_error_iur23j.png)
