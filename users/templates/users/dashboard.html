@@ -4,53 +4,67 @@
 
 {% block content %}
 <div class="container mt-5">
-    <h2>Welcome, {{ user.username }}!</h2>
-    <p>Access important features below:</p>
+    <!-- Added an H1 for page structure -->
+    <h1 class="text-center">Dashboard</h1>
+
+    <h2 class="text-center">Welcome, {{ user.username }}!</h2>
+    <p class="text-center">Access important features below:</p>
 
     <div class="row">
         <!-- Community Card -->
         <div class="col-md-6 mb-4">
-            <div class="card">
+            <div class="card h-100">
                 <div class="card-body">
-                    <h5 class="card-title">Community</h5>
+                    <h3 class="card-title">Community</h3>
                     <p class="card-text">Find support and share your experience with others in the community.</p>
-                    <a href="{% url 'community' %}" class="btn btn-success">Go to Community</a>
+                    <a href="{% url 'community' %}" class="btn btn-success" aria-label="Go to Community Section">
+                        Go to Community
+                    </a>
                 </div>
             </div>
         </div>
 
         <!-- Records Card -->
         <div class="col-md-6 mb-4">
-            <div class="card">
+            <div class="card h-100">
                 <div class="card-body">
-                    <h5 class="card-title">Records</h5>
+                    <h3 class="card-title">Records</h3>
                     <p class="card-text">Access and manage your dialysis records easily.</p>
-                    <a href="{% url 'add_record' %}" class="btn btn-success">Add a Record</a>
-                    <a href="{% url 'records_list' %}" class="btn btn-success">View Records</a>                    
+                    <a href="{% url 'add_record' %}" class="btn btn-success" aria-label="Add a new dialysis record">
+                        Add a Record
+                    </a>
+                    <a href="{% url 'records_list' %}" class="btn btn-success" aria-label="View past dialysis records">
+                        View Records
+                    </a>                    
                 </div>
             </div>
         </div>
 
-        <!-- Calendar Card (To Be Implemented) -->
+        <!-- Calendar Card -->
         <div class="col-md-6 mb-4">
-            <div class="card">
+            <div class="card h-100">
                 <div class="card-body">
-                    <h5 class="card-title">Calendar</h5>
+                    <h3 class="card-title">Calendar</h3>
                     <p class="card-text">Store and manage your hospital appointments.</p>                    
-                    <a href="{% url 'calendar_view' %}" class="btn btn-success">View Calendar</a>
+                    <a href="{% url 'calendar_view' %}" class="btn btn-success" aria-label="View calendar for appointments">
+                        View Calendar
+                    </a>
                 </div>
             </div>
         </div>
 
-        <!-- Upload Documents Card (To Be Implemented) -->
+        <!-- Upload Documents Card -->
         <div class="col-md-6 mb-4">
-            <div class="card">
+            <div class="card h-100">
                 <div class="card-body">
-                    <h5 class="card-title">Upload Documents</h5>
+                    <h3 class="card-title">Upload Documents</h3>
                     <p class="card-text">Upload and store important documents like prescriptions.</p>
-                    <a href="{% url 'uploads:upload_file' %}" class="btn btn-success">Upload File</a>
-                    <a href="{% url 'uploads:upload_list' %}" class="btn btn-success">View Uploaded Files</a>
-
+                    <a href="{% url 'uploads:upload_file' %}" class="btn btn-success" aria-label="Upload a new document">
+                        Upload File
+                    </a>
+                    <a href="{% url 'uploads:upload_list' %}" class="btn btn-success" aria-label="View uploaded documents">
+                        View Uploaded Files
+                    </a>
                 </div>
             </div>
         </div>
