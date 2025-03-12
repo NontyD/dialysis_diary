@@ -467,3 +467,13 @@ The main idea for this project was obtained by the [Django Blog](https://www.you
 
 Hero image used in the project was taken from [Freepik](https://www.freepik.com/).
 Favicon was generated from [Design.com](https://www.design.com/logo-maker)
+
+### Acknowledgements
+
+I would like to acknowledge the following people:
+
+- My mentor Jubril Akolade
+- Code Institute tutors, Oisin and Rebecca
+- My friends who helped me with testing.
+- My course facilitator and classmates for their positive feedback
+- Staff members at Tallaght University Hospital, Home Therapies Unit for their valuable input
