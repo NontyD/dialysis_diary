@@ -39,8 +39,7 @@ nav.custom-navbar {
     font-weight: bold !important;
 }
 
-.hero {
-    background-image: url('https://res.cloudinary.com/dzibrzlq9/image/upload/v1740966715/heroimage_jqjp3v.jpg');
+.hero {    
     background-size: cover;
     background-color: rgba(0, 0, 0, 0.3);
     background-position: center;
