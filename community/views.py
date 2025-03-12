@@ -3,6 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .models import Post, Comment
 
+
 @login_required
 def community_page(request):
     if request.method == "POST":
@@ -18,6 +19,7 @@ def community_page(request):
 
     posts = Post.objects.select_related("author").all()
     return render(request, "community/community.html", {"posts": posts})
+
 
 @login_required
 def edit_post(request, post_id):
@@ -42,6 +44,7 @@ def edit_post(request, post_id):
 
     return render(request, "community/edit_post.html", {"post": post})
 
+
 @login_required
 def delete_post(request, post_id):
     """Allow a user to delete their own post."""
@@ -59,6 +62,7 @@ def delete_post(request, post_id):
 
     return render(request, "community/confirm_delete.html", {"post": post})
 
+
 @login_required
 def add_comment(request, post_id):
     """Allow a user to comment on a post."""
@@ -70,7 +74,8 @@ def add_comment(request, post_id):
         if not content:
             messages.error(request, "Comment cannot be empty.")
         else:
-            Comment.objects.create(post=post, author=request.user, content=content)
+            Comment.objects.create(post=post, author=request.user,
+                                   content=content)
             messages.success(request, "Comment added successfully!")
 
         return redirect("community")  # Refresh page to show the new comment
