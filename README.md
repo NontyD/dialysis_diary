@@ -191,10 +191,10 @@ Users must create an account to access the platform’s features.
 
 After logging in, users are directed to the Dashboard, which provides an overview of the platform. The dashboard contains four main sections, each represented as a card:
 
-    Community – Users can find support and share experiences.
-    Records – Provides access to dialysis records and logs.
-    Calendar – Displays appointments and reminders.
-    Upload Documents – Allows users to store important medical documents.
+- Community – Users can find support and share experiences.
+- Records – Provides access to dialysis records and logs.
+- Calendar – Displays appointments and reminders.
+- Upload Documents – Allows users to store important medical documents.
 
 The dashboard offers a simple, clean interface for users to quickly access the most relevant features.
 
@@ -204,11 +204,11 @@ The dashboard offers a simple, clean interface for users to quickly access the m
 
 The Community section is a discussion space where users can share their experiences and seek support.
 
-    Users can create and submit posts.
-    Posts display the author, timestamp, and content.
-    Posts are shown in reverse chronological order (newest first).
-    Logged-in users can edit or delete their own posts.
-    Empty posts are not allowed, ensuring meaningful discussions.
+- Users can create and submit posts.
+- Posts display the author, timestamp, and content.
+- Posts are shown in reverse chronological order (newest first).
+- Logged-in users can edit or delete their own posts.
+- Empty posts are not allowed, ensuring meaningful discussions.
 
 This section fosters a supportive environment for patients undergoing dialysis and their caregivers.
 
@@ -221,15 +221,15 @@ This section fosters a supportive environment for patients undergoing dialysis a
 
 The Records section acts as a dialysis diary, allowing users to log daily treatment details. Users can input:
 
-    Weight before Dialysis (kg)
-    Blood Pressure (systolic & diastolic)
-    Initial Drain Volume (ml)
-    Total UF (ml)
-    Average Dwell (hh:mm)
-    Lost Dwell (hh:mm)
-    Added Dwell (hh:mm)
-    Weight after Dialysis (kg)
-    Comments for additional notes.
+- Weight before Dialysis (kg)
+- Blood Pressure (systolic & diastolic)
+- Initial Drain Volume (ml)
+- Total UF (ml)
+- Average Dwell (hh:mm)
+- Lost Dwell (hh:mm)
+- Added Dwell (hh:mm)
+- Weight after Dialysis (kg)
+- Comments for additional notes.
 
 Users can retrieve and review past records, this helps users track treatment trends and communicate effectively with healthcare providers.
 
@@ -239,9 +239,9 @@ Users can retrieve and review past records, this helps users track treatment tre
 
 The Calendar feature enables users to manage their hospital appointments and reminders.
 
-    - Users can add events with a title, date, and description.
-    - The calendar is displayed in a monthly view, along with a list of upcoming events.
-    - Events can be edited or deleted as needed.
+- Users can add events with a title, date, and description.
+- The calendar is displayed in a monthly view, along with a list of upcoming events.
+- Events can be edited or deleted as needed.
 
 This feature ensures that users stay on top of their medical schedule and dialysis routine.
 
@@ -254,9 +254,9 @@ This feature ensures that users stay on top of their medical schedule and dialys
 
 Users can upload and store important documents such as prescriptions, medical reports, and test results.
 
-    - Supports PDFs and images for convenience.
-    - Users can name each uploaded file for easy identification.
-    - Uploaded files remain accessible for future reference.
+- Supports PDFs and images for convenience.
+- Users can name each uploaded file for easy identification.
+- Uploaded files remain accessible for future reference.
 
 This feature acts as a digital medical file cabinet, allowing users to keep important records in one place.
 
@@ -267,8 +267,8 @@ This feature acts as a digital medical file cabinet, allowing users to keep impo
 
 The Navigation Bar provides easy access to all sections of the platform.
 
-    - Available on all pages, allowing users to switch between features without hassle.
-    - Contains links to Community, Records, Calendar, Upload Documents, and Dashboard.
+- Available on all pages, allowing users to switch between features without hassle.
+- Contains links to Community, Records, Calendar, Upload Documents, and Dashboard.
 
 ### Wireframes
 
@@ -405,8 +405,8 @@ The bugs were carefully managed and fixed as they arose, with particular attenti
 
 The following bugs are yet to be resolved and will be addressed in future improvements:
 
-    Event Deletion in Calendar – When an event is deleted, it does not immediately disappear from the calendar view. A manual page refresh is required for the changes to reflect.
-    Calendar Clickability on Mobile – On mobile screens, the calendar is not responsive to clicks, preventing users from interacting with events as expected.
+- **Event Deletion in Calendar** – When an event is deleted, it does not immediately disappear from the calendar view. A manual page refresh is required for the changes to reflect.
+- **Calendar Clickability on Mobile** – On mobile screens, the calendar is not responsive to clicks, preventing users from interacting with events as expected.
 
 ## Unimplemented Features
 
