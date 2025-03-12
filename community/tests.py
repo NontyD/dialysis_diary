@@ -57,7 +57,7 @@ class CommunityTests(TestCase):
         # Check error message
         messages_list = list(messages.get_messages(response.wsgi_request))
         self.assertEqual(len(messages_list), 1)
-        self.assertEqual(str(messages_list[0]), "Post cannot be empty.")
+        self.assertEqual(str(messages_list[0]), "Post can't be empty.")
 
     def test_edit_post_get(self):
         """Test loading the edit post page."""
@@ -169,4 +169,4 @@ class CommunityTests(TestCase):
         # Check error message
         messages_list = list(messages.get_messages(response.wsgi_request))
         self.assertEqual(len(messages_list), 1)
-        self.assertEqual(str(messages_list[0]), "Comment cannot be empty.")
+        self.assertEqual(str(messages_list[0]), "Comment can't be empty.")

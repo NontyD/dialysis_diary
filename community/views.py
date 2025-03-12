@@ -10,7 +10,7 @@ def community_page(request):
         content = request.POST.get("content").strip()
 
         if not content:
-            messages.error(request, "Post cannot be empty.")
+            messages.error(request, "Post can't be empty.")
         else:
             Post.objects.create(author=request.user, content=content)
             messages.success(request, "Post submitted successfully!")
@@ -35,7 +35,7 @@ def edit_post(request, post_id):
         new_content = request.POST.get("content").strip()
 
         if not new_content:
-            messages.error(request, "Post content cannot be empty.")
+            messages.error(request, "Post content can't be empty.")
         else:
             post.content = new_content
             post.save()
@@ -72,7 +72,7 @@ def add_comment(request, post_id):
         content = request.POST.get("content").strip()
 
         if not content:
-            messages.error(request, "Comment cannot be empty.")
+            messages.error(request, "Comment can't be empty.")
         else:
             Comment.objects.create(post=post, author=request.user,
                                    content=content)
