@@ -39,30 +39,29 @@ nav.custom-navbar {
 }
 
 .hero {
-    position: relative; /* Add this */
-    background-color: rgba(0, 0, 0, 0.3);
+    position: relative;    
     height: 400px;
-    display: flex; /* Changed to flex */
+    display: flex; 
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    overflow: hidden; /* Add this */
+    overflow: hidden; 
 }
 
 .hero img {
-    position: absolute; /* Add this */
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: -1; /* Place the image behind the text */
+    z-index: -1;
 }
 
 .hero .container {
     text-align: center;
-    position: relative; /* Add this */
-    z-index: 1; /* Bring the container to the front */
+    position: relative; 
+    z-index: 1; 
 }
 
 .hero .container h1,
