@@ -1,10 +1,14 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import (
+    render,
+    redirect,
+    get_object_or_404,
+)  # Enforce line length
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from .models import UploadedFile
-from .forms import UploadForm
 from django.urls import reverse
 
+from .models import UploadedFile  # Placed local imports after Django imports
+from .forms import UploadForm
 
 
 @login_required
@@ -16,7 +20,9 @@ def upload_file(request):
             uploaded_file = form.save(commit=False)
             uploaded_file.user = request.user
             uploaded_file.save()
-            messages.success(request, f"File '{uploaded_file.name}' uploaded successfully!")
+            messages.success(
+                request, f"File '{uploaded_file.name}' uploaded successfully!"
+            )  # Enforce line length
             return redirect(reverse("uploads:uploaded_files"))
     else:
         form = UploadForm()
@@ -27,7 +33,9 @@ def upload_file(request):
 @login_required
 def uploaded_files(request):
     """List uploaded files."""
-    files = UploadedFile.objects.filter(user=request.user).order_by("-uploaded_at")
+    files = UploadedFile.objects.filter(user=request.user).order_by(
+        "-uploaded_at"
+    )
     return render(request, "uploads/files.html", {"files": files})
 
 
