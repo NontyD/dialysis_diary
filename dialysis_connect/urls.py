@@ -24,7 +24,7 @@ urlpatterns = [
         "logout/",
         LogoutView.as_view(next_page="landing_page"),
         name="logout",
-    ),
+    ),    
 ]
 
 if settings.DEBUG:
