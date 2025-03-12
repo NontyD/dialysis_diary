@@ -85,11 +85,13 @@ class CommunityTests(TestCase):
     def test_edit_post_post_invalid(self):
         # Test submitting an invalid (empty) edit to a post.
         self.client.login(username='testuser', password='testpassword')
-        response = self.client.post(reverse('edit_post', args=[self.post.id]), {'content': ''})
+        response = self.client.post(reverse('edit_post', args=[self.post.id]),
+                                    {'content': ''})
         self.assertEqual(response.status_code, 302)
         self.assertRedirects(response, reverse('community'))
         self.post.refresh_from_db()
-        self.assertEqual(self.post.content, 'Test post content')  # Content should not change
+        # Content should not change
+        self.assertEqual(self.post.content, 'Test post content')
 
         # Check error message
         messages_list = list(messages.get_messages(response.wsgi_request))
@@ -105,7 +107,7 @@ class CommunityTests(TestCase):
         self.assertEqual(len(messages_list), 1)
         self.assertEqual(str(messages_list[0]), "You can only edit your "
                          "own posts.")
-    
+
     def test_delete_post_get(self):
         """Test loading the delete post confirmation page."""
         self.client.login(username='testuser', password='testpassword')
@@ -145,7 +147,7 @@ class CommunityTests(TestCase):
         self.client.login(username='testuser', password='testpassword')
         response = self.client.post(reverse('add_comment',
                                             args=[self.post.id]),
-                                            {'content': 'Test comment'})
+                                    {'content': 'Test comment'})
         self.assertEqual(response.status_code, 302)
         self.assertRedirects(response, reverse('community'))
         self.assertEqual(Comment.objects.count(), 1)
@@ -158,7 +160,8 @@ class CommunityTests(TestCase):
     def test_add_comment_post_invalid(self):
         """Test adding an invalid (empty) comment to a post."""
         self.client.login(username='testuser', password='testpassword')
-        response = self.client.post(reverse('add_comment', args=[self.post.id]), {'content': ''})
+        response = self.client.post(reverse('add_comment', args=[self.post.id]),
+                                    {'content': ''})
         self.assertEqual(response.status_code, 302)
         self.assertRedirects(response, reverse('community'))
         self.assertEqual(Comment.objects.count(), 0)
@@ -167,4 +170,3 @@ class CommunityTests(TestCase):
         messages_list = list(messages.get_messages(response.wsgi_request))
         self.assertEqual(len(messages_list), 1)
         self.assertEqual(str(messages_list[0]), "Comment cannot be empty.")
-

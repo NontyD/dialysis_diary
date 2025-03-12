@@ -81,6 +81,6 @@ nav.custom-navbar {
 .hero .container a {
     margin-bottom: 1rem;
     font-weight: bold !important;
-    color: white; /* Ensure text is white for visibility */
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Add text shadow for better readability */
+    color: black; 
+    text-shadow: 1px 1px 3px white; /* Add text shadow for better readability */
 }
