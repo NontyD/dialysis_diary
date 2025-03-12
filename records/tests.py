@@ -1,16 +1,23 @@
-# Description: Tests for the records app.
+"""Tests for the records app."""
+from datetime import datetime, timedelta
+
 from django.test import TestCase
 from django.urls import reverse
 from django.contrib.auth import get_user_model
+
 from .models import DialysisRecord
-from datetime import datetime, timedelta
 
 User = get_user_model()
 
+
 class DialysisRecordTests(TestCase):
+    """Test cases for DialysisRecord model and views."""
+
     def setUp(self):
         """Set up test user and some dialysis records."""
-        self.user = User.objects.create_user(username="testuser", password="password")
+        self.user = User.objects.create_user(
+            username="testuser", password="password"
+        )
         self.client.login(username="testuser", password="password")
 
         self.record1 = DialysisRecord.objects.create(
@@ -50,7 +57,7 @@ class DialysisRecordTests(TestCase):
         self.assertTemplateUsed(response, "records/add_record.html")
 
     def test_add_record_post_no_confirm(self):
-        """Test that submitting the form without confirmation shows confirmation page."""
+        """Test that form submit without confirmation shows confirm page."""
         response = self.client.post(reverse("add_record"), {
             "weight_before": 70,
             "blood_pressure_systolic": 120,
@@ -82,7 +89,9 @@ class DialysisRecordTests(TestCase):
             "confirm": "true"  # Simulate the confirmation button
         })
         self.assertRedirects(response, reverse("records_list"))
-        self.assertTrue(DialysisRecord.objects.filter(comments="Test entry").exists())
+        self.assertTrue(
+            DialysisRecord.objects.filter(comments="Test entry").exists()
+        )
 
     def test_records_list(self):
         """Test that records_list displays only logged-in user's records."""
@@ -111,4 +120,3 @@ class DialysisRecordTests(TestCase):
         self.assertRedirects(response, reverse("records_list"))
         messages = list(response.wsgi_request._messages)
         self.assertEqual(str(messages[0]), "Invalid period selected.")
-
