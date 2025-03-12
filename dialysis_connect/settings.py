@@ -3,9 +3,10 @@ from pathlib import Path
 import os
 import environ
 import cloudinary
+from django.contrib.auth import password_validation
 
 # Define BASE_DIR
-BASE_DIR = Path(__file__).resolve().parent.parent  
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Load environment variables
 env = environ.Env()
@@ -43,7 +44,6 @@ if DATABASE_URL:
         'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
     }
 else:
-    print("⚠️ Warning: DATABASE_URL is missing. Using default PostgreSQL settings.")
     DATABASES = {
         "default": {
             "ENGINE": "django.db.backends.postgresql",
@@ -53,7 +53,7 @@ else:
             "HOST": os.getenv("PGHOST", "127.0.0.1"),
             "PORT": os.getenv("PGPORT", "5432"),
         }
-    }    
+    }
 # Installed apps
 INSTALLED_APPS = [
     "django.contrib.admin",
@@ -108,11 +108,12 @@ WSGI_APPLICATION = "dialysis_connect.wsgi.application"
 
 # Password validation
 AUTH_PASSWORD_VALIDATORS = [
-    {"NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"},
-    {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator"},
-    {"NAME": "django.contrib.auth.password_validation.CommonPasswordValidator"},
-    {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator"},
+    {"NAME": password_validation.UserAttributeSimilarityValidator},
+    {"NAME": password_validation.MinimumLengthValidator},
+    {"NAME": password_validation.CommonPasswordValidator},
+    {"NAME": password_validation.NumericPasswordValidator},
 ]
+
 
 # Localization settings
 LANGUAGE_CODE = "en-us"
@@ -144,7 +145,8 @@ LOGIN_REDIRECT_URL = "/users/dashboard/"
 # Google Calendar API settings
 GOOGLE_CALENDAR_CREDENTIALS = BASE_DIR / "calendar_app/credentials.json"
 GOOGLE_REDIRECT_URI = "http://localhost:8000/calendar/oauth/callback/"
-GOOGLE_CREDENTIALS_PATH = env("GOOGLE_CREDENTIALS_PATH", default="calendar_app/credentials.json")
+GOOGLE_CREDENTIALS_PATH = env("GOOGLE_CREDENTIALS_PATH",
+                              default="calendar_app/credentials.json")
 
 # Default primary key field type
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"

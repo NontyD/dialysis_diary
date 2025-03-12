@@ -2,6 +2,7 @@ from django.db import models
 import cloudinary
 import cloudinary.models
 
+
 class UploadedImage(models.Model):
     image = cloudinary.models.CloudinaryField('image')
     uploaded_at = models.DateTimeField(auto_now_add=True)
