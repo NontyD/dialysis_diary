@@ -106,6 +106,14 @@
 
 - **Lighthouse Scores**: Used [Lighthouse Metrics](https://lighthouse-metrics.com/) to measure the scores
 
+### Scores for Home Page
+
+![Home](https://res.cloudinary.com/dzibrzlq9/image/upload/v1741779211/lighthouse_home_wqsuy4.png)
+
+### Scores for Dashboard
+
+![Dashboard](https://res.cloudinary.com/dzibrzlq9/image/upload/v1741779210/lighthouse_dashboard_osmhbz.png)
+
 ## Browser Compatibility
 
 The website was manually tested in chrome, firefox and edge and it worked accross those different browsers

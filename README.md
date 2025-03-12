@@ -6,7 +6,6 @@
 
 [![GitHub repo size](https://img.shields.io/github/repo-size/NontyD/dialysis_diary)](https://github.com/NontyD/dialysis_diary)
 
-
 ![Home](https://res.cloudinary.com/dzibrzlq9/image/upload/v1741395866/website_jigf7b.png)
 
 ## Dialysis Connect is a web-based platform designed to support individuals undergoing dialysis treatment by providing essential tools to manage their medical journey effectively. The platform aims to foster a supportive community, streamline record-keeping, and offer accessible features that enhance the overall patient experience. It serves as a comprehensive solution for dialysis patients to log their health records, schedule important events, share experiences, and store medical documents securely.
@@ -15,43 +14,43 @@
 
 1. Community Forum:
 
-    - Users can share experiences and seek support from other dialysis patients.
-    - Ability to create posts and comment on discussions.
-    - Posts include timestamps and are displayed in reverse chronological order.
-    - Users can edit or delete their own posts.
+   - Users can share experiences and seek support from other dialysis patients.
+   - Ability to create posts and comment on discussions.
+   - Posts include timestamps and are displayed in reverse chronological order.
+   - Users can edit or delete their own posts.
 
 2. Dialysis Records Management:
 
-    - Users can log essential dialysis details such as weight, blood pressure, fluid intake, and dwell times.
-    - Ability to add comments for additional notes.
-    - Records are automatically dated and displayed in reverse chronological order.    
+   - Users can log essential dialysis details such as weight, blood pressure, fluid intake, and dwell times.
+   - Ability to add comments for additional notes.
+   - Records are automatically dated and displayed in reverse chronological order.
 
 3. Calendar and Event Scheduling:
 
-    - Users can schedule and track hospital appointments or general reminders.
-    - Events include start and end times to ensure proper scheduling.    
+   - Users can schedule and track hospital appointments or general reminders.
+   - Events include start and end times to ensure proper scheduling.
 
 4. Document Uploads and Management:
 
-    - Users can securely upload and store important medical documents, prescriptions, and reports.
-    - Custom naming options for easy identification of uploaded files.
-    - Cloud storage integration via Cloudinary ensures secure access to documents.
+   - Users can securely upload and store important medical documents, prescriptions, and reports.
+   - Custom naming options for easy identification of uploaded files.
+   - Cloud storage integration via Cloudinary ensures secure access to documents.
 
 5. User Authentication and Security:
 
-    - Secure user registration and login functionality.
-    - Users can only access and modify their own records and uploads.
-    - Enforced password validation and authentication best practices.
+   - Secure user registration and login functionality.
+   - Users can only access and modify their own records and uploads.
+   - Enforced password validation and authentication best practices.
 
 6. Responsive and Accessible Design:
 
-    - Mobile-friendly interface to ensure accessibility across devices.
-    - Compliance with accessibility standards to cater to users with disabilities.
+   - Mobile-friendly interface to ensure accessibility across devices.
+   - Compliance with accessibility standards to cater to users with disabilities.
 
 7. Dashboard Overview:
 
-    - A central dashboard displaying quick links to community posts, dialysis records, calendar events, and uploaded documents.
-    - Intuitive navigation for seamless user experience.
+   - A central dashboard displaying quick links to community posts, dialysis records, calendar events, and uploaded documents.
+   - Intuitive navigation for seamless user experience.
 
 [User Stories](#user-stories)
 
@@ -145,6 +144,7 @@
 
 - **As a** dialysis patient, **I want** to delete an event, **so that** I can remove unnecessary or incorrect entries.
 - **Acceptance**: The user must be logged in to delete an event and the user can only delete their own events.
+
 ### 13. Upload document
 
 - **As a** dialysis patient, **I want** to upload and store important documents (e.g., prescriptions, reports), **so that** I can easily access them whenever needed.
@@ -162,21 +162,22 @@ The Dialysis Connect website employs a minimalist and calming color palette to e
 
 ### Agile Planning
 
-
+This project was developed using agile methodologies. An MVP (Minimum Viable Product) milestone was established to focus on delivering essential features. Each user story is accompanied by a comprehensive set of acceptance criteria, ensuring that all functionalities are well defined and meet completion standards. For more details, you can view the kanban board [here](https://github.com/users/NontyD/projects/5).
 
 ### Features
 
 #### Home
+
 ![Home](https://res.cloudinary.com/dzibrzlq9/image/upload/v1741395818/home_p6pzlp.png)
 
 The Home page serves as the entry point for Dialysis Connect. It provides an introduction to the platform and a user-friendly interface to navigate different features. The page includes a welcome message, links to the Irish Kidney Association (IKA) for educational resources, and a navigation bar for seamless movement between sections.
 
 #### Sign Up & Login
+
 <p align="center">
   <img src="https://res.cloudinary.com/dzibrzlq9/image/upload/v1741395847/signup_lmimdx.png" width="45%">
   <img src="https://res.cloudinary.com/dzibrzlq9/image/upload/v1741395833/login_slbfps.png" width="45%">
 </p>
-
 
 Users must create an account to access the platform’s features.
 
@@ -185,6 +186,7 @@ Users must create an account to access the platform’s features.
     - User authentication ensures privacy and security while managing personal health information.
 
 #### Dashboard
+
 ![Dashboard](https://res.cloudinary.com/dzibrzlq9/image/upload/v1741209614/dashboard_bcciea.png)
 
 After logging in, users are directed to the Dashboard, which provides an overview of the platform. The dashboard contains four main sections, each represented as a card:
@@ -197,6 +199,7 @@ After logging in, users are directed to the Dashboard, which provides an overvie
 The dashboard offers a simple, clean interface for users to quickly access the most relevant features.
 
 #### Community
+
 ![Community](https://res.cloudinary.com/dzibrzlq9/image/upload/v1741209614/community_hkjab1.png)
 
 The Community section is a discussion space where users can share their experiences and seek support.
@@ -210,6 +213,7 @@ The Community section is a discussion space where users can share their experien
 This section fosters a supportive environment for patients undergoing dialysis and their caregivers.
 
 #### Dialysis Records
+
 <p align="center">
   <img src="https://res.cloudinary.com/dzibrzlq9/image/upload/v1741209614/add-records_qt41bx.png" width="45%">
   <img src="https://res.cloudinary.com/dzibrzlq9/image/upload/v1741209615/records_hok3qg.png" width="45%">
@@ -230,6 +234,7 @@ The Records section acts as a dialysis diary, allowing users to log daily treatm
 Users can retrieve and review past records, this helps users track treatment trends and communicate effectively with healthcare providers.
 
 #### Calendar
+
 ![Calendar](https://res.cloudinary.com/dzibrzlq9/image/upload/v1741209615/calendar_ylqemj.png)
 
 The Calendar feature enables users to manage their hospital appointments and reminders.
@@ -237,10 +242,11 @@ The Calendar feature enables users to manage their hospital appointments and rem
     - Users can add events with a title, date, and description.
     - The calendar is displayed in a monthly view, along with a list of upcoming events.
     - Events can be edited or deleted as needed.
-    
+
 This feature ensures that users stay on top of their medical schedule and dialysis routine.
 
 #### File Upload
+
 <p align="center">
   <img src="https://res.cloudinary.com/dzibrzlq9/image/upload/v1741209615/upload_kn12dn.png" width="45%">
   <img src="https://res.cloudinary.com/dzibrzlq9/image/upload/v1741209615/files_diq2cy.png" width="45%">
@@ -255,6 +261,7 @@ Users can upload and store important documents such as prescriptions, medical re
 This feature acts as a digital medical file cabinet, allowing users to keep important records in one place.
 
 #### Navigation Bar
+
 ![Nav bar - user not logged in](https://res.cloudinary.com/dzibrzlq9/image/upload/v1741396439/nav-loogout_z5tz1a.png)
 ![Nav bar - user logged in](https://res.cloudinary.com/dzibrzlq9/image/upload/v1741396438/nav-login_oss0gk.png)
 
@@ -263,34 +270,38 @@ The Navigation Bar provides easy access to all sections of the platform.
     - Available on all pages, allowing users to switch between features without hassle.
     - Contains links to Community, Records, Calendar, Upload Documents, and Dashboard.
 
-
 ### Wireframes
 
 #### Home and Dashboard
+
 <p align="center">
   <img src="https://res.cloudinary.com/dzibrzlq9/image/upload/v1741657095/wireframe_home_qojpwl.png" width="45%">
   <img src="https://res.cloudinary.com/dzibrzlq9/image/upload/v1741657094/wireframe_dashboard_ab2mdl.png" width="45%">
 </p>
 
 #### Sign up and Login
+
 <p align="center">
   <img src="https://res.cloudinary.com/dzibrzlq9/image/upload/v1741657095/wireframe_signup_czdfhp.png" width="45%">
   <img src="https://res.cloudinary.com/dzibrzlq9/image/upload/v1741657095/wireframe_login_yiyf8p.png" width="45%">
 </p>
 
 #### Community and Calendar
+
 <p align="center">
   <img src="https://res.cloudinary.com/dzibrzlq9/image/upload/v1741657094/wireframe_community_qbfy4i.png" width="45%">
   <img src="https://res.cloudinary.com/dzibrzlq9/image/upload/v1741657094/wireframe_calendar_tanpo9.png" width="45%">
 </p>
 
 #### File uploads and Uploaded files
+
 <p align="center">
   <img src="https://res.cloudinary.com/dzibrzlq9/image/upload/v1741657095/wireframe_uploads_d95ehm.png" width="45%">
   <img src="https://res.cloudinary.com/dzibrzlq9/image/upload/v1741657094/wireframe_files_n2ra6d.png" width="45%">
 </p>
 
 #### Dialysis Records
+
 <p align="center">
   <img src="https://res.cloudinary.com/dzibrzlq9/image/upload/v1741657095/wireframe_record_tbnapa.png" width="45%">
   
@@ -301,6 +312,7 @@ The Navigation Bar provides easy access to all sections of the platform.
 The Dialysis Connect database is designed to support a community-driven platform for dialysis patients. It facilitates event management, user-generated posts and comments, document uploads, and dialysis records tracking. This database follows a relational structure to ensure data consistency, integrity, and efficient querying.
 
 The database comprises of 6 tables:
+
 - Users Table (users) - This table stores user information and serves as the primary reference for other tables.
 - Events Table (events) - This table stores event details, allowing users to track appointments and reminders.
 - Posts Table (posts) - This table manages user-generated posts within the community section.
@@ -332,13 +344,10 @@ The database comprises of 6 tables:
 
 - **Performance:** Time-based indexing on created_at fields optimizes querying.
 
-
 ![ERD](https://res.cloudinary.com/dzibrzlq9/image/upload/v1740884780/DialysisConnect_gauzuh.png)
-
 
 The ERD (Entity Relationship Diagram) was designed on [dbdiagram.io](https://dbdiagram.io/d/DialysisConnect-67c39901263d6cf9a0e91d6d)
 
-  
 ### Technology used
 
 | Category       | Technology & Version                                           | Other Dependencies                |
@@ -372,10 +381,10 @@ The ERD (Entity Relationship Diagram) was designed on [dbdiagram.io](https://dbd
 |                |                                                                | uritemplate==4.1.1                |
 |                |                                                                | urllib3==1.26.20                  |
 
-
 ### Tools used
 
 - Git: Used commands such as `git` `add` - `commit -m "message'` - `push`.
+- Gitpod: Initially used as IDE but later migrated to VS code
 - VS code: Used as my IDE.
 - Github: Used as the code hosting.
 - [Favicon io](https://favicon.io/favicon-converter/): Used to generate the faveicon.
@@ -390,7 +399,21 @@ I initially started my project using Gitpod but later needed to migrate to VS Co
 
 ## Fixed bugs
 
+The bugs were carefully managed and fixed as they arose, with particular attention given to maintaining readability and functionality within the character constraints. Each issue was addressed through an iterative debugging process, incorporating thorough testing and validation to prevent regressions. Error handling and input validation were refined to enhance user experience and prevent unexpected behavior. Additionally, debugging efforts focused on optimizing performance, improving maintainability, and ensuring compliance with best practices. This structured approach resulted in a clean, functional, and efficient final product.
 
+## Known Issues
+
+The following bugs are yet to be resolved and will be addressed in future improvements:
+
+    Event Deletion in Calendar – When an event is deleted, it does not immediately disappear from the calendar view. A manual page refresh is required for the changes to reflect.
+    Calendar Clickability on Mobile – On mobile screens, the calendar is not responsive to clicks, preventing users from interacting with events as expected.
+
+## Unimplemented Features
+
+The following features were planned and partially coded but are not yet functional. They will be implemented in future updates:
+
+- **User Settings (Profile Editing & Deletion)** – The backend logic for user profile editing and deletion exists, but the feature has not been integrated into the UI or made accessible to users.
+- **Filtering in Records** – A filtering function was planned to allow users to view records from a specific week or month. Currently, records are displayed in chronological order, and users can scroll to find past entries. The future implementation will introduce a date-based filter to improve accessibility and navigation.
 
 ## Testing
 
@@ -406,11 +429,11 @@ The Application has been deployed from GitHub to Heroku by following the steps:
 2. Create a new app, add a unique app name ( for this project, the name is travellingplanner) and then choose your region
 3. Click on create app
 4. Go to "Settings"
-5. Under Config Vars add the private API key information using key 'CRED' and into the value area copy the API key information added to the .json file.  Also add a key 'PORT' and value '8000'.
+5. Under Config Vars add the private API key information using key 'CRED' and into the value area copy the API key information added to the .json file. Also add a key 'PORT' and value '8000'.
 6. Add required buildpacks (further dependencies). For this project, set it up so Python will be on top and Node.js on bottom
 7. Go to "Deploy" and select "GitHub" in "Deployment method"
 8. To connect Heroku app to your Github repository code enter your repository name, click 'Search' and then 'Connect' when it shows below.
-9.  Choose the branch you want to build your app from
+9. Choose the branch you want to build your app from
 10. If preferred, click on "Enable Automatic Deploys", which keeps the app up to date with your GitHub repository
 11. Wait for the app to build. Once ready you will see the “App was successfully deployed” message and a 'View' button to take you to your deployed link.
 
@@ -429,15 +452,12 @@ To fork the repository:
 
 To clone the repository:
 
-* Click on the "Code" button in your forked repository.
-* Copy the repository URL (HTTPS, SSH, or GitHub CLI).
-* Open a terminal (or command prompt) on your computer.
-* Run the following command: git clone <github.com/nontyd/dialysis_diary>
-
-
+- Click on the "Code" button in your forked repository.
+- Copy the repository URL (HTTPS, SSH, or GitHub CLI).
+- Open a terminal (or command prompt) on your computer.
+- Run the following command: git clone <github.com/nontyd/dialysis_diary>
 
 ## Credits
-
 
 [ChatGPT 4o](https://openai.com/chatgpt/) / [Codeium](https://codeium.com/) / [Stack Overflow](https://stackoverflow.com/) for adjustments and bug fixing aid.
 
