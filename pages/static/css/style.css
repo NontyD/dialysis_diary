@@ -39,29 +39,41 @@ nav.custom-navbar {
 }
 
 .hero {
-    position: relative;    
+    position: relative;
     height: 400px;
-    display: flex; 
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    overflow: hidden; 
+    overflow: hidden;
+    padding: 0; 
+    margin: 0; 
 }
 
-.hero img {
+.hero picture {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
     z-index: -1;
+}
+
+.hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block; 
 }
 
 .hero .container {
     text-align: center;
-    position: relative; 
-    z-index: 1; 
+    position: relative;
+    z-index: 1;   
+    padding: 20px;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.4); /* Add semi-transparent background */
+    max-width: 800px; /* Limit container width for better readability */
 }
 
 .hero .container h1,
@@ -69,4 +81,6 @@ nav.custom-navbar {
 .hero .container a {
     margin-bottom: 1rem;
     font-weight: bold !important;
+    color: white; /* Ensure text is white for visibility */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Add text shadow for better readability */
 }
